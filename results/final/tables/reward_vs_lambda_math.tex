@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\small
+\caption{MATH: test reward ($\pm$ SE over questions) and abstain rate by penalty $\lambda$ (c\_s=0.01, c\_j/c\_s=2).}
+\label{tab:reward_vs_lambda_math}
+\begin{tabular}{lrrrrrr}
+\toprule
+policy & reward $\lambda$=1.2 & abstain $\lambda$=1.2 & reward $\lambda$=2 & abstain $\lambda$=2 & reward $\lambda$=5 & abstain $\lambda$=5 \\
+\midrule
+first answer & -0.619 $\pm$ 0.060 & 0.00 & -1.208 $\pm$ 0.082 & 0.00 & -3.417 $\pm$ 0.164 & 0.00 \\
+fixed-k (tuned) & -0.488 $\pm$ 0.078 & 0.00 & -0.994 $\pm$ 0.107 & 0.00 & -2.825 $\pm$ 0.225 & 0.00 \\
+margin stop (tuned) & -0.445 $\pm$ 0.083 & 0.00 & -0.941 $\pm$ 0.113 & 0.00 & -2.762 $\pm$ 0.227 & 0.00 \\
+margin stop+abstain (tuned) & 0.084 $\pm$ 0.032 & 0.79 & 0.038 $\pm$ 0.033 & 0.82 & 0.015 $\pm$ 0.023 & 0.90 \\
+DP (resample) & -0.454 $\pm$ 0.082 & 0.00 & -0.948 $\pm$ 0.114 & 0.00 & -2.781 $\pm$ 0.227 & 0.00 \\
+DP (+judge) & -0.453 $\pm$ 0.082 & 0.00 & -0.948 $\pm$ 0.113 & 0.00 & -2.780 $\pm$ 0.226 & 0.00 \\
+DP (resample, abstain) & 0.101 $\pm$ 0.036 & 0.76 & 0.061 $\pm$ 0.034 & 0.82 & 0.046 $\pm$ 0.029 & 0.89 \\
+DP (+judge, abstain) & 0.097 $\pm$ 0.036 & 0.76 & 0.062 $\pm$ 0.034 & 0.82 & 0.046 $\pm$ 0.028 & 0.89 \\
+\bottomrule
+\end{tabular}
+\end{table}

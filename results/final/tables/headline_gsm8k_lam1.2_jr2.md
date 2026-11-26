@@ -1,0 +1,17 @@
+GSM8K, λ=1.2, c_j/c_s=2, c_s=0.01: test-set means over questions ± standard error (n=127 questions, 100 episodes each). param = chosen parameter per fold (tuned) or c_s (DP); fixed-k param is k, margin params are m or (m, k_max). Compute in resample-equivalents.
+
+Source: `results/final/GSM8K_Llama-3-8B-Instruct/lam1.2_jr2/headline.csv`
+
+| policy | param | accuracy | wrong | abstain | compute | reward |
+|---|---|---|---|---|---|---|
+| first answer | 1 | 0.771 ± 0.026 | 0.229 ± 0.026 | 0.000 ± 0.000 | 0.00 ± 0.00 | 0.497 ± 0.057 |
+| fixed-k (tuned) | 5/7 | 0.846 ± 0.026 | 0.154 ± 0.026 | 0.000 ± 0.000 | 5.21 ± 0.09 | 0.609 ± 0.058 |
+| margin stop (tuned) | 2/3 | 0.859 ± 0.026 | 0.141 ± 0.026 | 0.000 ± 0.000 | 2.84 ± 0.26 | 0.662 ± 0.059 |
+| margin stop+abstain (tuned) | (2, 10)/(3, 10) | 0.817 ± 0.030 | 0.094 ± 0.020 | 0.089 ± 0.017 | 3.27 ± 0.17 | 0.671 ± 0.053 |
+| fixed-k (oracle-tuned on test) | 5 | 0.841 ± 0.026 | 0.159 ± 0.026 | 0.000 ± 0.000 | 4.00 ± 0.00 | 0.610 ± 0.058 |
+| margin stop (oracle-tuned on test) | 2 | 0.859 ± 0.026 | 0.141 ± 0.026 | 0.000 ± 0.000 | 2.47 ± 0.23 | 0.665 ± 0.058 |
+| margin stop+abstain (oracle-tuned on test) | (2, 10) | 0.837 ± 0.028 | 0.115 ± 0.022 | 0.048 ± 0.012 | 2.17 ± 0.15 | 0.677 ± 0.054 |
+| DP (resample) | 0.01 | 0.860 ± 0.026 | 0.140 ± 0.026 | 0.000 ± 0.000 | 3.30 ± 0.30 | 0.658 ± 0.059 |
+| DP (+judge) | 0.01 | 0.859 ± 0.026 | 0.141 ± 0.026 | 0.000 ± 0.000 | 3.32 ± 0.30 | 0.657 ± 0.060 |
+| DP (resample, abstain) | 0.01 | 0.819 ± 0.030 | 0.099 ± 0.022 | 0.082 ± 0.017 | 3.41 ± 0.23 | 0.665 ± 0.055 |
+| DP (+judge, abstain) | 0.01 | 0.813 ± 0.030 | 0.093 ± 0.020 | 0.093 ± 0.018 | 4.00 ± 0.28 | 0.661 ± 0.054 |

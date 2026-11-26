@@ -1,0 +1,16 @@
+{
+  "config": "GSM8K_Llama-3-8B-Instruct",
+  "lam": 5.0,
+  "judge_ratio": 2.0,
+  "c_s": 0.01,
+  "H": 20,
+  "folds": 5,
+  "episodes": 100,
+  "tune_episodes": 100,
+  "seed": 0,
+  "judge_file": "GSM8K_Llama-3-8B-Instruct_judge.csv",
+  "judge_false_pass": 0.2598814229249012,
+  "judge_false_fail": 0.5483870967741935,
+  "n_questions": 127,
+  "runtime_s": 3.8
+}

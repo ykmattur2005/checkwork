@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\small
+\caption{GSM8K, $\lambda$=1.2, c\_j/c\_s=2, c\_s=0.01: test-set means over questions $\pm$ standard error (n=127 questions, 100 episodes each). param = chosen parameter per fold (tuned) or c\_s (DP); fixed-k param is k, margin params are m or (m, k\_max). Compute in resample-equivalents.}
+\label{tab:headline_gsm8k_lam1.2_jr2}
+\begin{tabular}{llrrrrr}
+\toprule
+policy & param & accuracy & wrong & abstain & compute & reward \\
+\midrule
+first answer & 1 & 0.771 $\pm$ 0.026 & 0.229 $\pm$ 0.026 & 0.000 $\pm$ 0.000 & 0.00 $\pm$ 0.00 & 0.497 $\pm$ 0.057 \\
+fixed-k (tuned) & 5/7 & 0.846 $\pm$ 0.026 & 0.154 $\pm$ 0.026 & 0.000 $\pm$ 0.000 & 5.21 $\pm$ 0.09 & 0.609 $\pm$ 0.058 \\
+margin stop (tuned) & 2/3 & 0.859 $\pm$ 0.026 & 0.141 $\pm$ 0.026 & 0.000 $\pm$ 0.000 & 2.84 $\pm$ 0.26 & 0.662 $\pm$ 0.059 \\
+margin stop+abstain (tuned) & (2, 10)/(3, 10) & 0.817 $\pm$ 0.030 & 0.094 $\pm$ 0.020 & 0.089 $\pm$ 0.017 & 3.27 $\pm$ 0.17 & 0.671 $\pm$ 0.053 \\
+fixed-k (oracle-tuned on test) & 5 & 0.841 $\pm$ 0.026 & 0.159 $\pm$ 0.026 & 0.000 $\pm$ 0.000 & 4.00 $\pm$ 0.00 & 0.610 $\pm$ 0.058 \\
+margin stop (oracle-tuned on test) & 2 & 0.859 $\pm$ 0.026 & 0.141 $\pm$ 0.026 & 0.000 $\pm$ 0.000 & 2.47 $\pm$ 0.23 & 0.665 $\pm$ 0.058 \\
+margin stop+abstain (oracle-tuned on test) & (2, 10) & 0.837 $\pm$ 0.028 & 0.115 $\pm$ 0.022 & 0.048 $\pm$ 0.012 & 2.17 $\pm$ 0.15 & 0.677 $\pm$ 0.054 \\
+DP (resample) & 0.01 & 0.860 $\pm$ 0.026 & 0.140 $\pm$ 0.026 & 0.000 $\pm$ 0.000 & 3.30 $\pm$ 0.30 & 0.658 $\pm$ 0.059 \\
+DP (+judge) & 0.01 & 0.859 $\pm$ 0.026 & 0.141 $\pm$ 0.026 & 0.000 $\pm$ 0.000 & 3.32 $\pm$ 0.30 & 0.657 $\pm$ 0.060 \\
+DP (resample, abstain) & 0.01 & 0.819 $\pm$ 0.030 & 0.099 $\pm$ 0.022 & 0.082 $\pm$ 0.017 & 3.41 $\pm$ 0.23 & 0.665 $\pm$ 0.055 \\
+DP (+judge, abstain) & 0.01 & 0.813 $\pm$ 0.030 & 0.093 $\pm$ 0.020 & 0.093 $\pm$ 0.018 & 4.00 $\pm$ 0.28 & 0.661 $\pm$ 0.054 \\
+\bottomrule
+\end{tabular}
+\end{table}

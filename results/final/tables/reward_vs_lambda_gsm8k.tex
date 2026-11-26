@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\small
+\caption{GSM8K: test reward ($\pm$ SE over questions) and abstain rate by penalty $\lambda$ (c\_s=0.01, c\_j/c\_s=2).}
+\label{tab:reward_vs_lambda_gsm8k}
+\begin{tabular}{lrrrrrr}
+\toprule
+policy & reward $\lambda$=1.2 & abstain $\lambda$=1.2 & reward $\lambda$=2 & abstain $\lambda$=2 & reward $\lambda$=5 & abstain $\lambda$=5 \\
+\midrule
+first answer & 0.497 $\pm$ 0.057 & 0.00 & 0.314 $\pm$ 0.078 & 0.00 & -0.373 $\pm$ 0.156 & 0.00 \\
+fixed-k (tuned) & 0.609 $\pm$ 0.058 & 0.00 & 0.487 $\pm$ 0.080 & 0.00 & 0.037 $\pm$ 0.160 & 0.00 \\
+margin stop (tuned) & 0.662 $\pm$ 0.059 & 0.00 & 0.547 $\pm$ 0.081 & 0.00 & 0.131 $\pm$ 0.162 & 0.00 \\
+margin stop+abstain (tuned) & 0.671 $\pm$ 0.053 & 0.09 & 0.601 $\pm$ 0.064 & 0.14 & 0.478 $\pm$ 0.071 & 0.30 \\
+DP (resample) & 0.658 $\pm$ 0.059 & 0.00 & 0.537 $\pm$ 0.082 & 0.00 & 0.118 $\pm$ 0.162 & 0.00 \\
+DP (+judge) & 0.657 $\pm$ 0.060 & 0.00 & 0.537 $\pm$ 0.082 & 0.00 & 0.121 $\pm$ 0.162 & 0.00 \\
+DP (resample, abstain) & 0.665 $\pm$ 0.055 & 0.08 & 0.605 $\pm$ 0.059 & 0.19 & 0.502 $\pm$ 0.072 & 0.28 \\
+DP (+judge, abstain) & 0.661 $\pm$ 0.054 & 0.09 & 0.600 $\pm$ 0.061 & 0.18 & 0.502 $\pm$ 0.073 & 0.28 \\
+\bottomrule
+\end{tabular}
+\end{table}

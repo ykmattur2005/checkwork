@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\small
+\caption{MATH, $\lambda$=2, c\_j/c\_s=1, c\_s=0.01: test-set means over questions $\pm$ standard error (n=128 questions, 100 episodes each). param = chosen parameter per fold (tuned) or c\_s (DP); fixed-k param is k, margin params are m or (m, k\_max). Compute in resample-equivalents.}
+\label{tab:headline_math_lam2_jr1}
+\begin{tabular}{llrrrrr}
+\toprule
+policy & param & accuracy & wrong & abstain & compute & reward \\
+\midrule
+first answer & 1 & 0.264 $\pm$ 0.027 & 0.736 $\pm$ 0.027 & 0.000 $\pm$ 0.000 & 0.00 $\pm$ 0.00 & -1.208 $\pm$ 0.082 \\
+fixed-k (tuned) & 13/9 & 0.370 $\pm$ 0.036 & 0.630 $\pm$ 0.036 & 0.000 $\pm$ 0.000 & 10.41 $\pm$ 0.17 & -0.994 $\pm$ 0.107 \\
+margin stop (tuned) & 2/3 & 0.387 $\pm$ 0.037 & 0.613 $\pm$ 0.037 & 0.000 $\pm$ 0.000 & 10.35 $\pm$ 0.52 & -0.941 $\pm$ 0.113 \\
+margin stop+abstain (tuned) & (3, 5)/(4, 5) & 0.148 $\pm$ 0.025 & 0.036 $\pm$ 0.009 & 0.815 $\pm$ 0.025 & 3.75 $\pm$ 0.04 & 0.038 $\pm$ 0.033 \\
+fixed-k (oracle-tuned on test) & 13 & 0.378 $\pm$ 0.036 & 0.622 $\pm$ 0.036 & 0.000 $\pm$ 0.000 & 12.00 $\pm$ 0.00 & -0.987 $\pm$ 0.109 \\
+margin stop (oracle-tuned on test) & 2 & 0.387 $\pm$ 0.036 & 0.613 $\pm$ 0.036 & 0.000 $\pm$ 0.000 & 9.62 $\pm$ 0.51 & -0.936 $\pm$ 0.112 \\
+margin stop+abstain (oracle-tuned on test) & (3, 5) & 0.169 $\pm$ 0.028 & 0.040 $\pm$ 0.009 & 0.791 $\pm$ 0.027 & 3.71 $\pm$ 0.04 & 0.052 $\pm$ 0.036 \\
+DP (resample) & 0.01 & 0.390 $\pm$ 0.037 & 0.610 $\pm$ 0.037 & 0.000 $\pm$ 0.000 & 11.82 $\pm$ 0.36 & -0.948 $\pm$ 0.114 \\
+DP (+judge) & 0.01 & 0.391 $\pm$ 0.037 & 0.609 $\pm$ 0.037 & 0.000 $\pm$ 0.000 & 11.81 $\pm$ 0.36 & -0.946 $\pm$ 0.113 \\
+DP (resample, abstain) & 0.01 & 0.152 $\pm$ 0.027 & 0.026 $\pm$ 0.009 & 0.821 $\pm$ 0.028 & 3.80 $\pm$ 0.20 & 0.061 $\pm$ 0.034 \\
+DP (+judge, abstain) & 0.01 & 0.158 $\pm$ 0.028 & 0.023 $\pm$ 0.008 & 0.819 $\pm$ 0.028 & 4.27 $\pm$ 0.21 & 0.069 $\pm$ 0.033 \\
+\bottomrule
+\end{tabular}
+\end{table}

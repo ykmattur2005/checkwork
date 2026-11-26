@@ -1,0 +1,762 @@
+GSM8K_Llama-3-8B-Instruct lam=1.2 jr=2 judge=GSM8K_Llama-3-8B-Instruct_judge.csv -> results/final/GSM8K_Llama-3-8B-Instruct/lam1.2_jr2
+  fold 1: 101 train / 26 test, 2.7s
+  fold 0: 101 train / 26 test, 2.7s
+  fold 2: 102 train / 25 test, 2.7s
+  fold 4: 102 train / 25 test, 2.7s
+  fold 3: 102 train / 25 test, 2.7s
+Costs: c_s=0.01, c_j=2.0*c_s, lambda=1.2, H=20; judge file GSM8K_Llama-3-8B-Instruct_judge.csv; 100 test episodes/question; ± = standard error over 127 questions.
+
+| policy | param | accuracy | wrong | abstain | compute | reward |
+|---|---|---|---|---|---|---|
+| first answer | 1 | 0.771 ± 0.026 | 0.229 ± 0.026 | 0.000 ± 0.000 | 0.00 ± 0.00 | 0.497 ± 0.057 |
+| fixed-k (tuned) | 5/7 | 0.846 ± 0.026 | 0.154 ± 0.026 | 0.000 ± 0.000 | 5.21 ± 0.09 | 0.609 ± 0.058 |
+| margin stop (tuned) | 2/3 | 0.859 ± 0.026 | 0.141 ± 0.026 | 0.000 ± 0.000 | 2.84 ± 0.26 | 0.662 ± 0.059 |
+| margin stop+abstain (tuned) | (2, 10)/(3, 10) | 0.817 ± 0.030 | 0.094 ± 0.020 | 0.089 ± 0.017 | 3.27 ± 0.17 | 0.671 ± 0.053 |
+| fixed-k (oracle-tuned on test) | 5 | 0.841 ± 0.026 | 0.159 ± 0.026 | 0.000 ± 0.000 | 4.00 ± 0.00 | 0.610 ± 0.058 |
+| margin stop (oracle-tuned on test) | 2 | 0.859 ± 0.026 | 0.141 ± 0.026 | 0.000 ± 0.000 | 2.47 ± 0.23 | 0.665 ± 0.058 |
+| margin stop+abstain (oracle-tuned on test) | (2, 10) | 0.837 ± 0.028 | 0.115 ± 0.022 | 0.048 ± 0.012 | 2.17 ± 0.15 | 0.677 ± 0.054 |
+| DP (resample) | 0.01 | 0.860 ± 0.026 | 0.140 ± 0.026 | 0.000 ± 0.000 | 3.30 ± 0.30 | 0.658 ± 0.059 |
+| DP (+judge) | 0.01 | 0.859 ± 0.026 | 0.141 ± 0.026 | 0.000 ± 0.000 | 3.32 ± 0.30 | 0.657 ± 0.060 |
+| DP (resample, abstain) | 0.01 | 0.819 ± 0.030 | 0.099 ± 0.022 | 0.082 ± 0.017 | 3.41 ± 0.23 | 0.665 ± 0.055 |
+| DP (+judge, abstain) | 0.01 | 0.813 ± 0.030 | 0.093 ± 0.020 | 0.093 ± 0.018 | 4.00 ± 0.28 | 0.661 ± 0.054 |
+
+ fold                      policy   param  tune_reward
+    0             fixed-k (tuned)       7     0.634832
+    0         margin stop (tuned)       2     0.694040
+    0 margin stop+abstain (tuned) (2, 10)     0.706319
+    1             fixed-k (tuned)       7     0.585386
+    1         margin stop (tuned)       2     0.634225
+    1 margin stop+abstain (tuned) (3, 10)     0.653765
+    2             fixed-k (tuned)       7     0.623588
+    2         margin stop (tuned)       3     0.680457
+    2 margin stop+abstain (tuned) (3, 10)     0.697824
+    3             fixed-k (tuned)       5     0.590314
+    3         margin stop (tuned)       2     0.637826
+    3 margin stop+abstain (tuned) (3, 10)     0.645899
+    4             fixed-k (tuned)       5     0.600882
+    4         margin stop (tuned)       2     0.644140
+    4 margin stop+abstain (tuned) (3, 10)     0.663796
+                policy                          vs  mean_diff   ci_lo   ci_hi  wilcoxon_p  holm_p
+         DP (resample)             fixed-k (tuned)     0.0487  0.0332  0.0665      0.0000  0.0000
+         DP (resample)         margin stop (tuned)    -0.0036 -0.0084  0.0010      0.0000  0.0005
+         DP (resample) margin stop+abstain (tuned)    -0.0131 -0.0359  0.0062      0.0003  0.0029
+           DP (+judge)             fixed-k (tuned)     0.0479  0.0317  0.0661      0.0000  0.0000
+           DP (+judge)         margin stop (tuned)    -0.0044 -0.0089 -0.0002      0.0000  0.0003
+           DP (+judge) margin stop+abstain (tuned)    -0.0140 -0.0368  0.0054      0.0007  0.0055
+DP (resample, abstain)             fixed-k (tuned)     0.0559  0.0376  0.0775      0.0000  0.0000
+DP (resample, abstain)         margin stop (tuned)     0.0036 -0.0132  0.0219      0.0009  0.0061
+DP (resample, abstain) margin stop+abstain (tuned)    -0.0059 -0.0152  0.0023      0.2161  0.2414
+  DP (+judge, abstain)             fixed-k (tuned)     0.0518  0.0307  0.0768      0.0000  0.0000
+  DP (+judge, abstain)         margin stop (tuned)    -0.0005 -0.0228  0.0237      0.0002  0.0024
+  DP (+judge, abstain) margin stop+abstain (tuned)    -0.0101 -0.0228  0.0018      0.0805  0.2414
+           DP (+judge)               DP (resample)    -0.0008 -0.0024  0.0006      0.0166  0.0832
+  DP (+judge, abstain)      DP (resample, abstain)    -0.0042 -0.0171  0.0087      0.0952  0.2414
+DP (resample, abstain)               DP (resample)     0.0072 -0.0096  0.0259      0.0174  0.0832
+  DP (+judge, abstain)                 DP (+judge)     0.0039 -0.0184  0.0285      0.0017  0.0100
+done in 4.0s
+GSM8K_Llama-3-8B-Instruct lam=2 jr=2 judge=GSM8K_Llama-3-8B-Instruct_judge.csv -> results/final/GSM8K_Llama-3-8B-Instruct/lam2_jr2
+  fold 4: 102 train / 25 test, 11.8s
+  fold 2: 102 train / 25 test, 11.9s
+  fold 3: 102 train / 25 test, 11.9s
+  fold 0: 101 train / 26 test, 12.0s
+  fold 1: 101 train / 26 test, 12.2s
+Costs: c_s=0.01, c_j=2.0*c_s, lambda=2.0, H=20; judge file GSM8K_Llama-3-8B-Instruct_judge.csv; 100 test episodes/question; ± = standard error over 127 questions.
+
+| policy | param | accuracy | wrong | abstain | compute | reward |
+|---|---|---|---|---|---|---|
+| first answer | 1 | 0.771 ± 0.026 | 0.229 ± 0.026 | 0.000 ± 0.000 | 0.00 ± 0.00 | 0.314 ± 0.078 |
+| fixed-k (tuned) | 5/7/9 | 0.849 ± 0.027 | 0.151 ± 0.027 | 0.000 ± 0.000 | 6.02 ± 0.11 | 0.487 ± 0.080 |
+| margin stop (tuned) | 2/3 | 0.860 ± 0.026 | 0.140 ± 0.026 | 0.000 ± 0.000 | 3.32 ± 0.30 | 0.547 ± 0.081 |
+| margin stop+abstain (tuned) | (3, 10)/(4, 10) | 0.789 ± 0.032 | 0.073 ± 0.018 | 0.138 ± 0.023 | 4.27 ± 0.18 | 0.601 ± 0.064 |
+| fixed-k (oracle-tuned on test) | 7 | 0.850 ± 0.026 | 0.150 ± 0.026 | 0.000 ± 0.000 | 6.00 ± 0.00 | 0.489 ± 0.079 |
+| margin stop (oracle-tuned on test) | 2 | 0.859 ± 0.026 | 0.141 ± 0.026 | 0.000 ± 0.000 | 2.47 ± 0.23 | 0.552 ± 0.079 |
+| margin stop+abstain (oracle-tuned on test) | (4, 10) | 0.777 ± 0.033 | 0.058 ± 0.016 | 0.165 ± 0.026 | 4.73 ± 0.18 | 0.615 ± 0.060 |
+| DP (resample) | 0.01 | 0.861 ± 0.026 | 0.139 ± 0.026 | 0.000 ± 0.000 | 4.64 ± 0.34 | 0.537 ± 0.082 |
+| DP (+judge) | 0.01 | 0.861 ± 0.027 | 0.139 ± 0.027 | 0.000 ± 0.000 | 4.67 ± 0.34 | 0.537 ± 0.082 |
+| DP (resample, abstain) | 0.01 | 0.758 ± 0.034 | 0.056 ± 0.015 | 0.186 ± 0.027 | 4.17 ± 0.20 | 0.605 ± 0.059 |
+| DP (+judge, abstain) | 0.01 | 0.765 ± 0.033 | 0.059 ± 0.017 | 0.176 ± 0.027 | 4.55 ± 0.25 | 0.600 ± 0.061 |
+
+ fold                      policy   param  tune_reward
+    0             fixed-k (tuned)       9     0.530594
+    0         margin stop (tuned)       3     0.594201
+    0 margin stop+abstain (tuned) (3, 10)     0.646310
+    1             fixed-k (tuned)       7     0.456436
+    1         margin stop (tuned)       2     0.510264
+    1 margin stop+abstain (tuned) (4, 10)     0.590044
+    2             fixed-k (tuned)       7     0.508529
+    2         margin stop (tuned)       3     0.580378
+    2 margin stop+abstain (tuned) (3, 10)     0.643235
+    3             fixed-k (tuned)       5     0.455882
+    3         margin stop (tuned)       2     0.514846
+    3 margin stop+abstain (tuned) (4, 10)     0.579788
+    4             fixed-k (tuned)       7     0.476471
+    4         margin stop (tuned)       2     0.523670
+    4 margin stop+abstain (tuned) (4, 10)     0.608058
+                policy                          vs  mean_diff   ci_lo   ci_hi  wilcoxon_p  holm_p
+         DP (resample)             fixed-k (tuned)     0.0504  0.0286  0.0741      0.0000  0.0000
+         DP (resample)         margin stop (tuned)    -0.0091 -0.0168 -0.0016      0.0000  0.0000
+         DP (resample) margin stop+abstain (tuned)    -0.0637 -0.1176 -0.0176      0.0433  0.2166
+           DP (+judge)             fixed-k (tuned)     0.0503  0.0276  0.0742      0.0000  0.0000
+           DP (+judge)         margin stop (tuned)    -0.0093 -0.0167 -0.0023      0.0000  0.0000
+           DP (+judge) margin stop+abstain (tuned)    -0.0638 -0.1178 -0.0173      0.0325  0.1951
+DP (resample, abstain)             fixed-k (tuned)     0.1181  0.0636  0.1807      0.0000  0.0000
+DP (resample, abstain)         margin stop (tuned)     0.0586 -0.0001  0.1247      0.0005  0.0047
+DP (resample, abstain) margin stop+abstain (tuned)     0.0040 -0.0128  0.0220      0.9360  1.0000
+  DP (+judge, abstain)             fixed-k (tuned)     0.1132  0.0588  0.1766      0.0000  0.0000
+  DP (+judge, abstain)         margin stop (tuned)     0.0537 -0.0040  0.1203      0.0007  0.0063
+  DP (+judge, abstain) margin stop+abstain (tuned)    -0.0009 -0.0214  0.0199      0.9458  1.0000
+           DP (+judge)               DP (resample)    -0.0001 -0.0031  0.0027      0.4467  1.0000
+  DP (+judge, abstain)      DP (resample, abstain)    -0.0049 -0.0228  0.0105      0.9110  1.0000
+DP (resample, abstain)               DP (resample)     0.0677  0.0081  0.1346      0.0087  0.0696
+  DP (+judge, abstain)                 DP (+judge)     0.0630  0.0039  0.1305      0.0173  0.1211
+done in 13.9s
+GSM8K_Llama-3-8B-Instruct lam=5 jr=2 judge=GSM8K_Llama-3-8B-Instruct_judge.csv -> results/final/GSM8K_Llama-3-8B-Instruct/lam5_jr2
+  fold 0: 101 train / 26 test, 2.6s
+  fold 1: 101 train / 26 test, 2.6s
+  fold 2: 102 train / 25 test, 2.6s
+  fold 3: 102 train / 25 test, 2.6s
+  fold 4: 102 train / 25 test, 2.7s
+Costs: c_s=0.01, c_j=2.0*c_s, lambda=5.0, H=20; judge file GSM8K_Llama-3-8B-Instruct_judge.csv; 100 test episodes/question; ± = standard error over 127 questions.
+
+| policy | param | accuracy | wrong | abstain | compute | reward |
+|---|---|---|---|---|---|---|
+| first answer | 1 | 0.771 ± 0.026 | 0.229 ± 0.026 | 0.000 ± 0.000 | 0.00 ± 0.00 | -0.373 ± 0.156 |
+| fixed-k (tuned) | 13/7/9 | 0.855 ± 0.027 | 0.145 ± 0.027 | 0.000 ± 0.000 | 9.18 ± 0.21 | 0.037 ± 0.160 |
+| margin stop (tuned) | 3 | 0.862 ± 0.027 | 0.138 ± 0.027 | 0.000 ± 0.000 | 4.36 ± 0.33 | 0.131 ± 0.162 |
+| margin stop+abstain (tuned) | (6, 10)/(7, 10) | 0.676 ± 0.037 | 0.025 ± 0.010 | 0.299 ± 0.034 | 7.06 ± 0.12 | 0.478 ± 0.071 |
+| fixed-k (oracle-tuned on test) | 9 | 0.854 ± 0.027 | 0.146 ± 0.027 | 0.000 ± 0.000 | 8.00 ± 0.00 | 0.046 ± 0.160 |
+| margin stop (oracle-tuned on test) | 3 | 0.862 ± 0.027 | 0.138 ± 0.027 | 0.000 ± 0.000 | 4.36 ± 0.33 | 0.131 ± 0.162 |
+| margin stop+abstain (oracle-tuned on test) | (6, 10) | 0.707 ± 0.036 | 0.029 ± 0.010 | 0.263 ± 0.033 | 6.59 ± 0.14 | 0.496 ± 0.076 |
+| DP (resample) | 0.01 | 0.862 ± 0.027 | 0.138 ± 0.027 | 0.000 ± 0.000 | 5.52 ± 0.39 | 0.118 ± 0.162 |
+| DP (+judge) | 0.01 | 0.863 ± 0.027 | 0.137 ± 0.027 | 0.000 ± 0.000 | 5.65 ± 0.41 | 0.121 ± 0.162 |
+| DP (resample, abstain) | 0.01 | 0.696 ± 0.037 | 0.025 ± 0.010 | 0.278 ± 0.035 | 6.74 ± 0.20 | 0.502 ± 0.072 |
+| DP (+judge, abstain) | 0.01 | 0.699 ± 0.037 | 0.026 ± 0.010 | 0.276 ± 0.034 | 6.86 ± 0.21 | 0.502 ± 0.073 |
+
+ fold                      policy   param  tune_reward
+    0             fixed-k (tuned)       9     0.141188
+    0         margin stop (tuned)       3     0.231231
+    0 margin stop+abstain (tuned) (6, 10)     0.538340
+    1             fixed-k (tuned)       9    -0.019802
+    1         margin stop (tuned)       3     0.057889
+    1 margin stop+abstain (tuned) (7, 10)     0.478424
+    2             fixed-k (tuned)      13     0.105882
+    2         margin stop (tuned)       3     0.205084
+    2 margin stop+abstain (tuned) (6, 10)     0.552513
+    3             fixed-k (tuned)      13    -0.020000
+    3         margin stop (tuned)       3     0.065440
+    3 margin stop+abstain (tuned) (7, 10)     0.466782
+    4             fixed-k (tuned)       7     0.012941
+    4         margin stop (tuned)       3     0.080880
+    4 margin stop+abstain (tuned) (7, 10)     0.529403
+                policy                          vs  mean_diff   ci_lo   ci_hi  wilcoxon_p  holm_p
+         DP (resample)             fixed-k (tuned)     0.0810  0.0456  0.1210      0.0000  0.0000
+         DP (resample)         margin stop (tuned)    -0.0126 -0.0230 -0.0034      0.0000  0.0000
+         DP (resample) margin stop+abstain (tuned)    -0.3604 -0.5827 -0.1614      0.0034  0.0290
+           DP (+judge)             fixed-k (tuned)     0.0840  0.0478  0.1243      0.0000  0.0000
+           DP (+judge)         margin stop (tuned)    -0.0096 -0.0202  0.0022      0.0000  0.0000
+           DP (+judge) margin stop+abstain (tuned)    -0.3575 -0.5803 -0.1580      0.0034  0.0290
+DP (resample, abstain)             fixed-k (tuned)     0.4646  0.2700  0.6801      0.0027  0.0274
+DP (resample, abstain)         margin stop (tuned)     0.3710  0.1713  0.5938      0.0034  0.0290
+DP (resample, abstain) margin stop+abstain (tuned)     0.0232  0.0010  0.0444      0.0000  0.0000
+  DP (+judge, abstain)             fixed-k (tuned)     0.4646  0.2697  0.6801      0.0032  0.0290
+  DP (+judge, abstain)         margin stop (tuned)     0.3710  0.1719  0.5940      0.0035  0.0290
+  DP (+judge, abstain) margin stop+abstain (tuned)     0.0231 -0.0032  0.0477      0.0000  0.0000
+           DP (+judge)               DP (resample)     0.0029 -0.0065  0.0127      0.0073  0.0290
+  DP (+judge, abstain)      DP (resample, abstain)    -0.0000 -0.0144  0.0114      0.5267  0.5267
+DP (resample, abstain)               DP (resample)     0.3836  0.1845  0.6051      0.0037  0.0290
+  DP (+judge, abstain)                 DP (+judge)     0.3806  0.1820  0.6031      0.0037  0.0290
+done in 3.8s
+GSM8K_Llama-3-8B-Instruct lam=2 jr=0.5 judge=GSM8K_Llama-3-8B-Instruct_judge.csv -> results/final/GSM8K_Llama-3-8B-Instruct/lam2_jr0.5
+  fold 2: 102 train / 25 test, 11.8s
+  fold 1: 101 train / 26 test, 11.9s
+  fold 0: 101 train / 26 test, 12.0s
+  fold 3: 102 train / 25 test, 11.8s
+  fold 4: 102 train / 25 test, 11.9s
+Costs: c_s=0.01, c_j=0.5*c_s, lambda=2.0, H=20; judge file GSM8K_Llama-3-8B-Instruct_judge.csv; 100 test episodes/question; ± = standard error over 127 questions.
+
+| policy | param | accuracy | wrong | abstain | compute | reward |
+|---|---|---|---|---|---|---|
+| first answer | 1 | 0.771 ± 0.026 | 0.229 ± 0.026 | 0.000 ± 0.000 | 0.00 ± 0.00 | 0.314 ± 0.078 |
+| fixed-k (tuned) | 5/7/9 | 0.849 ± 0.027 | 0.151 ± 0.027 | 0.000 ± 0.000 | 6.02 ± 0.11 | 0.487 ± 0.080 |
+| margin stop (tuned) | 2/3 | 0.860 ± 0.026 | 0.140 ± 0.026 | 0.000 ± 0.000 | 3.32 ± 0.30 | 0.547 ± 0.081 |
+| margin stop+abstain (tuned) | (3, 10)/(4, 10) | 0.789 ± 0.032 | 0.073 ± 0.018 | 0.138 ± 0.023 | 4.27 ± 0.18 | 0.601 ± 0.064 |
+| fixed-k (oracle-tuned on test) | 7 | 0.850 ± 0.026 | 0.150 ± 0.026 | 0.000 ± 0.000 | 6.00 ± 0.00 | 0.489 ± 0.079 |
+| margin stop (oracle-tuned on test) | 2 | 0.859 ± 0.026 | 0.141 ± 0.026 | 0.000 ± 0.000 | 2.47 ± 0.23 | 0.552 ± 0.079 |
+| margin stop+abstain (oracle-tuned on test) | (4, 10) | 0.777 ± 0.033 | 0.058 ± 0.016 | 0.165 ± 0.026 | 4.73 ± 0.18 | 0.615 ± 0.060 |
+| DP (resample) | 0.01 | 0.861 ± 0.026 | 0.139 ± 0.026 | 0.000 ± 0.000 | 4.64 ± 0.34 | 0.537 ± 0.082 |
+| DP (+judge) | 0.01 | 0.862 ± 0.026 | 0.138 ± 0.026 | 0.000 ± 0.000 | 4.60 ± 0.34 | 0.539 ± 0.082 |
+| DP (resample, abstain) | 0.01 | 0.758 ± 0.034 | 0.056 ± 0.015 | 0.186 ± 0.027 | 4.17 ± 0.20 | 0.605 ± 0.059 |
+| DP (+judge, abstain) | 0.01 | 0.766 ± 0.033 | 0.058 ± 0.016 | 0.176 ± 0.027 | 4.37 ± 0.23 | 0.607 ± 0.060 |
+
+ fold                      policy   param  tune_reward
+    0             fixed-k (tuned)       9     0.530594
+    0         margin stop (tuned)       3     0.594201
+    0 margin stop+abstain (tuned) (3, 10)     0.646310
+    1             fixed-k (tuned)       7     0.456436
+    1         margin stop (tuned)       2     0.510264
+    1 margin stop+abstain (tuned) (4, 10)     0.590044
+    2             fixed-k (tuned)       7     0.508529
+    2         margin stop (tuned)       3     0.580378
+    2 margin stop+abstain (tuned) (3, 10)     0.643235
+    3             fixed-k (tuned)       5     0.455882
+    3         margin stop (tuned)       2     0.514846
+    3 margin stop+abstain (tuned) (4, 10)     0.579788
+    4             fixed-k (tuned)       7     0.476471
+    4         margin stop (tuned)       2     0.523670
+    4 margin stop+abstain (tuned) (4, 10)     0.608058
+                policy                          vs  mean_diff   ci_lo   ci_hi  wilcoxon_p  holm_p
+         DP (resample)             fixed-k (tuned)     0.0504  0.0286  0.0741      0.0000  0.0000
+         DP (resample)         margin stop (tuned)    -0.0091 -0.0168 -0.0016      0.0000  0.0000
+         DP (resample) margin stop+abstain (tuned)    -0.0637 -0.1176 -0.0176      0.0433  0.2599
+           DP (+judge)             fixed-k (tuned)     0.0522  0.0290  0.0777      0.0000  0.0000
+           DP (+judge)         margin stop (tuned)    -0.0073 -0.0174  0.0016      0.0000  0.0000
+           DP (+judge) margin stop+abstain (tuned)    -0.0619 -0.1161 -0.0149      0.0271  0.1896
+DP (resample, abstain)             fixed-k (tuned)     0.1181  0.0636  0.1807      0.0000  0.0000
+DP (resample, abstain)         margin stop (tuned)     0.0586 -0.0001  0.1247      0.0005  0.0047
+DP (resample, abstain) margin stop+abstain (tuned)     0.0040 -0.0128  0.0220      0.9360  1.0000
+  DP (+judge, abstain)             fixed-k (tuned)     0.1198  0.0607  0.1876      0.0000  0.0000
+  DP (+judge, abstain)         margin stop (tuned)     0.0602 -0.0021  0.1311      0.0017  0.0155
+  DP (+judge, abstain) margin stop+abstain (tuned)     0.0057 -0.0233  0.0355      0.3863  1.0000
+           DP (+judge)               DP (resample)     0.0018 -0.0042  0.0077      0.9360  1.0000
+  DP (+judge, abstain)      DP (resample, abstain)     0.0017 -0.0240  0.0269      0.9036  1.0000
+DP (resample, abstain)               DP (resample)     0.0677  0.0081  0.1346      0.0087  0.0696
+  DP (+judge, abstain)                 DP (+judge)     0.0676  0.0051  0.1390      0.0732  0.3658
+done in 13.3s
+GSM8K_Llama-3-8B-Instruct lam=2 jr=1 judge=GSM8K_Llama-3-8B-Instruct_judge.csv -> results/final/GSM8K_Llama-3-8B-Instruct/lam2_jr1
+  fold 0: 101 train / 26 test, 11.9s
+  fold 4: 102 train / 25 test, 11.8s
+  fold 3: 102 train / 25 test, 11.9s
+  fold 2: 102 train / 25 test, 11.9s
+  fold 1: 101 train / 26 test, 12.0s
+Costs: c_s=0.01, c_j=1.0*c_s, lambda=2.0, H=20; judge file GSM8K_Llama-3-8B-Instruct_judge.csv; 100 test episodes/question; ± = standard error over 127 questions.
+
+| policy | param | accuracy | wrong | abstain | compute | reward |
+|---|---|---|---|---|---|---|
+| first answer | 1 | 0.771 ± 0.026 | 0.229 ± 0.026 | 0.000 ± 0.000 | 0.00 ± 0.00 | 0.314 ± 0.078 |
+| fixed-k (tuned) | 5/7/9 | 0.849 ± 0.027 | 0.151 ± 0.027 | 0.000 ± 0.000 | 6.02 ± 0.11 | 0.487 ± 0.080 |
+| margin stop (tuned) | 2/3 | 0.860 ± 0.026 | 0.140 ± 0.026 | 0.000 ± 0.000 | 3.32 ± 0.30 | 0.547 ± 0.081 |
+| margin stop+abstain (tuned) | (3, 10)/(4, 10) | 0.789 ± 0.032 | 0.073 ± 0.018 | 0.138 ± 0.023 | 4.27 ± 0.18 | 0.601 ± 0.064 |
+| fixed-k (oracle-tuned on test) | 7 | 0.850 ± 0.026 | 0.150 ± 0.026 | 0.000 ± 0.000 | 6.00 ± 0.00 | 0.489 ± 0.079 |
+| margin stop (oracle-tuned on test) | 2 | 0.859 ± 0.026 | 0.141 ± 0.026 | 0.000 ± 0.000 | 2.47 ± 0.23 | 0.552 ± 0.079 |
+| margin stop+abstain (oracle-tuned on test) | (4, 10) | 0.777 ± 0.033 | 0.058 ± 0.016 | 0.165 ± 0.026 | 4.73 ± 0.18 | 0.615 ± 0.060 |
+| DP (resample) | 0.01 | 0.861 ± 0.026 | 0.139 ± 0.026 | 0.000 ± 0.000 | 4.64 ± 0.34 | 0.537 ± 0.082 |
+| DP (+judge) | 0.01 | 0.862 ± 0.026 | 0.138 ± 0.026 | 0.000 ± 0.000 | 4.66 ± 0.34 | 0.540 ± 0.082 |
+| DP (resample, abstain) | 0.01 | 0.758 ± 0.034 | 0.056 ± 0.015 | 0.186 ± 0.027 | 4.17 ± 0.20 | 0.605 ± 0.059 |
+| DP (+judge, abstain) | 0.01 | 0.768 ± 0.033 | 0.059 ± 0.017 | 0.173 ± 0.027 | 4.54 ± 0.24 | 0.604 ± 0.061 |
+
+ fold                      policy   param  tune_reward
+    0             fixed-k (tuned)       9     0.530594
+    0         margin stop (tuned)       3     0.594201
+    0 margin stop+abstain (tuned) (3, 10)     0.646310
+    1             fixed-k (tuned)       7     0.456436
+    1         margin stop (tuned)       2     0.510264
+    1 margin stop+abstain (tuned) (4, 10)     0.590044
+    2             fixed-k (tuned)       7     0.508529
+    2         margin stop (tuned)       3     0.580378
+    2 margin stop+abstain (tuned) (3, 10)     0.643235
+    3             fixed-k (tuned)       5     0.455882
+    3         margin stop (tuned)       2     0.514846
+    3 margin stop+abstain (tuned) (4, 10)     0.579788
+    4             fixed-k (tuned)       7     0.476471
+    4         margin stop (tuned)       2     0.523670
+    4 margin stop+abstain (tuned) (4, 10)     0.608058
+                policy                          vs  mean_diff   ci_lo   ci_hi  wilcoxon_p  holm_p
+         DP (resample)             fixed-k (tuned)     0.0504  0.0286  0.0741      0.0000  0.0000
+         DP (resample)         margin stop (tuned)    -0.0091 -0.0168 -0.0016      0.0000  0.0000
+         DP (resample) margin stop+abstain (tuned)    -0.0637 -0.1176 -0.0176      0.0433  0.2166
+           DP (+judge)             fixed-k (tuned)     0.0525  0.0304  0.0770      0.0000  0.0000
+           DP (+judge)         margin stop (tuned)    -0.0070 -0.0153  0.0010      0.0000  0.0000
+           DP (+judge) margin stop+abstain (tuned)    -0.0616 -0.1155 -0.0152      0.0321  0.1924
+DP (resample, abstain)             fixed-k (tuned)     0.1181  0.0636  0.1807      0.0000  0.0000
+DP (resample, abstain)         margin stop (tuned)     0.0586 -0.0001  0.1247      0.0005  0.0047
+DP (resample, abstain) margin stop+abstain (tuned)     0.0040 -0.0128  0.0220      0.9360  1.0000
+  DP (+judge, abstain)             fixed-k (tuned)     0.1170  0.0600  0.1824      0.0000  0.0000
+  DP (+judge, abstain)         margin stop (tuned)     0.0575 -0.0024  0.1256      0.0008  0.0071
+  DP (+judge, abstain) margin stop+abstain (tuned)     0.0029 -0.0230  0.0290      0.4122  1.0000
+           DP (+judge)               DP (resample)     0.0021 -0.0025  0.0067      0.7954  1.0000
+  DP (+judge, abstain)      DP (resample, abstain)    -0.0011 -0.0251  0.0212      0.6466  1.0000
+DP (resample, abstain)               DP (resample)     0.0677  0.0081  0.1346      0.0087  0.0696
+  DP (+judge, abstain)                 DP (+judge)     0.0645  0.0038  0.1331      0.0151  0.1059
+done in 13.1s
+NOTE: data/processed/GSM8K_Llama-3-8B-Instruct_judge7b.csv missing; skipping 7B-judge runs (see colab/judge_7b.ipynb)
+MATH_Llama-3-8B-Instruct lam=1.2 jr=2 judge=MATH_Llama-3-8B-Instruct_judge.csv -> results/final/MATH_Llama-3-8B-Instruct/lam1.2_jr2
+  fold 1: 102 train / 26 test, 2.7s
+  fold 4: 103 train / 25 test, 2.7s
+  fold 2: 102 train / 26 test, 2.8s
+  fold 0: 102 train / 26 test, 2.8s
+  fold 3: 103 train / 25 test, 2.8s
+Costs: c_s=0.01, c_j=2.0*c_s, lambda=1.2, H=20; judge file MATH_Llama-3-8B-Instruct_judge.csv; 100 test episodes/question; ± = standard error over 128 questions.
+
+| policy | param | accuracy | wrong | abstain | compute | reward |
+|---|---|---|---|---|---|---|
+| first answer | 1 | 0.264 ± 0.027 | 0.736 ± 0.027 | 0.000 ± 0.000 | 0.00 ± 0.00 | -0.619 ± 0.060 |
+| fixed-k (tuned) | 13/9 | 0.364 ± 0.035 | 0.636 ± 0.035 | 0.000 ± 0.000 | 8.81 ± 0.14 | -0.488 ± 0.078 |
+| margin stop (tuned) | 2 | 0.387 ± 0.036 | 0.613 ± 0.036 | 0.000 ± 0.000 | 9.62 ± 0.51 | -0.445 ± 0.083 |
+| margin stop+abstain (tuned) | (3, 5) | 0.169 ± 0.028 | 0.040 ± 0.009 | 0.791 ± 0.027 | 3.71 ± 0.04 | 0.084 ± 0.032 |
+| fixed-k (oracle-tuned on test) | 9 | 0.363 ± 0.035 | 0.637 ± 0.035 | 0.000 ± 0.000 | 8.00 ± 0.00 | -0.482 ± 0.077 |
+| margin stop (oracle-tuned on test) | 2 | 0.387 ± 0.036 | 0.613 ± 0.036 | 0.000 ± 0.000 | 9.62 ± 0.51 | -0.445 ± 0.083 |
+| margin stop+abstain (oracle-tuned on test) | (3, 5) | 0.169 ± 0.028 | 0.040 ± 0.009 | 0.791 ± 0.027 | 3.71 ± 0.04 | 0.084 ± 0.032 |
+| DP (resample) | 0.01 | 0.380 ± 0.036 | 0.620 ± 0.036 | 0.000 ± 0.000 | 9.04 ± 0.37 | -0.454 ± 0.082 |
+| DP (+judge) | 0.01 | 0.381 ± 0.036 | 0.619 ± 0.036 | 0.000 ± 0.000 | 9.07 ± 0.37 | -0.453 ± 0.082 |
+| DP (resample, abstain) | 0.01 | 0.194 ± 0.031 | 0.046 ± 0.012 | 0.760 ± 0.031 | 3.90 ± 0.16 | 0.101 ± 0.036 |
+| DP (+judge, abstain) | 0.01 | 0.195 ± 0.031 | 0.048 ± 0.012 | 0.757 ± 0.031 | 3.98 ± 0.17 | 0.097 ± 0.036 |
+
+ fold                      policy  param  tune_reward
+    0             fixed-k (tuned)      9    -0.437098
+    0         margin stop (tuned)      2    -0.413462
+    0 margin stop+abstain (tuned) (3, 5)     0.106955
+    1             fixed-k (tuned)      9    -0.566941
+    1         margin stop (tuned)      2    -0.528366
+    1 margin stop+abstain (tuned) (3, 5)     0.061747
+    2             fixed-k (tuned)     13    -0.488529
+    2         margin stop (tuned)      2    -0.455050
+    2 margin stop+abstain (tuned) (3, 5)     0.082441
+    3             fixed-k (tuned)      9    -0.410680
+    3         margin stop (tuned)      2    -0.365598
+    3 margin stop+abstain (tuned) (3, 5)     0.096909
+    4             fixed-k (tuned)      9    -0.452330
+    4         margin stop (tuned)      2    -0.424912
+    4 margin stop+abstain (tuned) (3, 5)     0.094200
+                policy                          vs  mean_diff   ci_lo   ci_hi  wilcoxon_p  holm_p
+         DP (resample)             fixed-k (tuned)     0.0349  0.0168  0.0538      0.0086  0.0348
+         DP (resample)         margin stop (tuned)    -0.0082 -0.0208  0.0042      0.9903  1.0000
+         DP (resample) margin stop+abstain (tuned)    -0.5376 -0.6569 -0.4195      0.0000  0.0000
+           DP (+judge)             fixed-k (tuned)     0.0354  0.0172  0.0546      0.0070  0.0348
+           DP (+judge)         margin stop (tuned)    -0.0076 -0.0204  0.0049      0.9592  1.0000
+           DP (+judge) margin stop+abstain (tuned)    -0.5371 -0.6566 -0.4188      0.0000  0.0000
+DP (resample, abstain)             fixed-k (tuned)     0.5889  0.4857  0.6943      0.0000  0.0000
+DP (resample, abstain)         margin stop (tuned)     0.5459  0.4278  0.6664      0.0000  0.0000
+DP (resample, abstain) margin stop+abstain (tuned)     0.0165  0.0024  0.0300      0.0000  0.0000
+  DP (+judge, abstain)             fixed-k (tuned)     0.5858  0.4829  0.6908      0.0000  0.0000
+  DP (+judge, abstain)         margin stop (tuned)     0.5428  0.4242  0.6630      0.0000  0.0000
+  DP (+judge, abstain) margin stop+abstain (tuned)     0.0133 -0.0018  0.0274      0.0000  0.0000
+           DP (+judge)               DP (resample)     0.0005 -0.0007  0.0017      0.2158  0.6474
+  DP (+judge, abstain)      DP (resample, abstain)    -0.0031 -0.0069  0.0000      0.0001  0.0005
+DP (resample, abstain)               DP (resample)     0.5541  0.4400  0.6703      0.0000  0.0000
+  DP (+judge, abstain)                 DP (+judge)     0.5504  0.4365  0.6665      0.0000  0.0000
+done in 3.9s
+MATH_Llama-3-8B-Instruct lam=2 jr=2 judge=MATH_Llama-3-8B-Instruct_judge.csv -> results/final/MATH_Llama-3-8B-Instruct/lam2_jr2
+  fold 4: 103 train / 25 test, 12.1s
+  fold 1: 102 train / 26 test, 12.2s
+  fold 3: 103 train / 25 test, 12.2s
+  fold 2: 102 train / 26 test, 12.2s
+  fold 0: 102 train / 26 test, 12.5s
+Costs: c_s=0.01, c_j=2.0*c_s, lambda=2.0, H=20; judge file MATH_Llama-3-8B-Instruct_judge.csv; 100 test episodes/question; ± = standard error over 128 questions.
+
+| policy | param | accuracy | wrong | abstain | compute | reward |
+|---|---|---|---|---|---|---|
+| first answer | 1 | 0.264 ± 0.027 | 0.736 ± 0.027 | 0.000 ± 0.000 | 0.00 ± 0.00 | -1.208 ± 0.082 |
+| fixed-k (tuned) | 13/9 | 0.370 ± 0.036 | 0.630 ± 0.036 | 0.000 ± 0.000 | 10.41 ± 0.17 | -0.994 ± 0.107 |
+| margin stop (tuned) | 2/3 | 0.387 ± 0.037 | 0.613 ± 0.037 | 0.000 ± 0.000 | 10.35 ± 0.52 | -0.941 ± 0.113 |
+| margin stop+abstain (tuned) | (3, 5)/(4, 5) | 0.148 ± 0.025 | 0.036 ± 0.009 | 0.815 ± 0.025 | 3.75 ± 0.04 | 0.038 ± 0.033 |
+| fixed-k (oracle-tuned on test) | 13 | 0.378 ± 0.036 | 0.622 ± 0.036 | 0.000 ± 0.000 | 12.00 ± 0.00 | -0.987 ± 0.109 |
+| margin stop (oracle-tuned on test) | 2 | 0.387 ± 0.036 | 0.613 ± 0.036 | 0.000 ± 0.000 | 9.62 ± 0.51 | -0.936 ± 0.112 |
+| margin stop+abstain (oracle-tuned on test) | (3, 5) | 0.169 ± 0.028 | 0.040 ± 0.009 | 0.791 ± 0.027 | 3.71 ± 0.04 | 0.052 ± 0.036 |
+| DP (resample) | 0.01 | 0.390 ± 0.037 | 0.610 ± 0.037 | 0.000 ± 0.000 | 11.82 ± 0.36 | -0.948 ± 0.114 |
+| DP (+judge) | 0.01 | 0.390 ± 0.037 | 0.610 ± 0.037 | 0.000 ± 0.000 | 11.85 ± 0.36 | -0.948 ± 0.113 |
+| DP (resample, abstain) | 0.01 | 0.152 ± 0.027 | 0.026 ± 0.009 | 0.821 ± 0.028 | 3.80 ± 0.20 | 0.061 ± 0.034 |
+| DP (+judge, abstain) | 0.01 | 0.151 ± 0.027 | 0.025 ± 0.009 | 0.824 ± 0.028 | 3.87 ± 0.20 | 0.062 ± 0.034 |
+
+ fold                      policy  param  tune_reward
+    0             fixed-k (tuned)      9    -0.930588
+    0         margin stop (tuned)      2    -0.893226
+    0 margin stop+abstain (tuned) (3, 5)     0.076445
+    1             fixed-k (tuned)     13    -1.105000
+    1         margin stop (tuned)      2    -1.047974
+    1 margin stop+abstain (tuned) (4, 5)     0.030543
+    2             fixed-k (tuned)     13    -0.986176
+    2         margin stop (tuned)      3    -0.941757
+    2 margin stop+abstain (tuned) (3, 5)     0.053735
+    3             fixed-k (tuned)     13    -0.893495
+    3         margin stop (tuned)      2    -0.828511
+    3 margin stop+abstain (tuned) (3, 5)     0.064753
+    4             fixed-k (tuned)      9    -0.951359
+    4         margin stop (tuned)      2    -0.908717
+    4 margin stop+abstain (tuned) (3, 5)     0.062821
+                policy                          vs  mean_diff   ci_lo   ci_hi  wilcoxon_p  holm_p
+         DP (resample)             fixed-k (tuned)     0.0461  0.0202  0.0749      0.0803  0.4025
+         DP (resample)         margin stop (tuned)    -0.0067 -0.0192  0.0063      0.0882  0.4025
+         DP (resample) margin stop+abstain (tuned)    -0.9863 -1.1683 -0.8054      0.0000  0.0000
+           DP (+judge)             fixed-k (tuned)     0.0463  0.0203  0.0750      0.0694  0.4025
+           DP (+judge)         margin stop (tuned)    -0.0065 -0.0197  0.0073      0.1038  0.4025
+           DP (+judge) margin stop+abstain (tuned)    -0.9861 -1.1686 -0.8047      0.0000  0.0000
+DP (resample, abstain)             fixed-k (tuned)     1.0555  0.8865  1.2271      0.0000  0.0000
+DP (resample, abstain)         margin stop (tuned)     1.0027  0.8201  1.1876      0.0000  0.0000
+DP (resample, abstain) margin stop+abstain (tuned)     0.0232  0.0125  0.0337      0.0000  0.0000
+  DP (+judge, abstain)             fixed-k (tuned)     1.0561  0.8863  1.2292      0.0000  0.0000
+  DP (+judge, abstain)         margin stop (tuned)     1.0033  0.8196  1.1890      0.0000  0.0000
+  DP (+judge, abstain) margin stop+abstain (tuned)     0.0237  0.0128  0.0343      0.0000  0.0000
+           DP (+judge)               DP (resample)     0.0002 -0.0034  0.0035      0.0779  0.4025
+  DP (+judge, abstain)      DP (resample, abstain)     0.0005 -0.0030  0.0043      0.0671  0.4025
+DP (resample, abstain)               DP (resample)     1.0094  0.8252  1.1949      0.0000  0.0000
+  DP (+judge, abstain)                 DP (+judge)     1.0098  0.8253  1.1952      0.0000  0.0000
+done in 13.9s
+MATH_Llama-3-8B-Instruct lam=5 jr=2 judge=MATH_Llama-3-8B-Instruct_judge.csv -> results/final/MATH_Llama-3-8B-Instruct/lam5_jr2
+  fold 3: 103 train / 25 test, 2.7s
+  fold 0: 102 train / 26 test, 2.7s
+  fold 4: 103 train / 25 test, 2.7s
+  fold 2: 102 train / 26 test, 2.7s
+  fold 1: 102 train / 26 test, 2.7s
+Costs: c_s=0.01, c_j=2.0*c_s, lambda=5.0, H=20; judge file MATH_Llama-3-8B-Instruct_judge.csv; 100 test episodes/question; ± = standard error over 128 questions.
+
+| policy | param | accuracy | wrong | abstain | compute | reward |
+|---|---|---|---|---|---|---|
+| first answer | 1 | 0.264 ± 0.027 | 0.736 ± 0.027 | 0.000 ± 0.000 | 0.00 ± 0.00 | -3.417 ± 0.164 |
+| fixed-k (tuned) | 17/21 | 0.393 ± 0.037 | 0.607 ± 0.037 | 0.000 ± 0.000 | 18.41 ± 0.17 | -2.825 ± 0.225 |
+| margin stop (tuned) | 2/3 | 0.394 ± 0.037 | 0.606 ± 0.037 | 0.000 ± 0.000 | 12.30 ± 0.55 | -2.762 ± 0.227 |
+| margin stop+abstain (tuned) | (5, 5) | 0.089 ± 0.019 | 0.007 ± 0.002 | 0.904 ± 0.019 | 4.00 ± 0.00 | 0.015 ± 0.023 |
+| fixed-k (oracle-tuned on test) | 21 | 0.398 ± 0.038 | 0.603 ± 0.038 | 0.000 ± 0.000 | 20.00 ± 0.00 | -2.815 ± 0.226 |
+| margin stop (oracle-tuned on test) | 3 | 0.395 ± 0.037 | 0.605 ± 0.037 | 0.000 ± 0.000 | 13.02 ± 0.53 | -2.757 ± 0.229 |
+| margin stop+abstain (oracle-tuned on test) | (5, 5) | 0.089 ± 0.019 | 0.007 ± 0.002 | 0.904 ± 0.019 | 4.00 ± 0.00 | 0.015 ± 0.023 |
+| DP (resample) | 0.01 | 0.394 ± 0.037 | 0.606 ± 0.037 | 0.000 ± 0.000 | 14.29 ± 0.31 | -2.781 ± 0.227 |
+| DP (+judge) | 0.01 | 0.394 ± 0.037 | 0.606 ± 0.037 | 0.000 ± 0.000 | 14.31 ± 0.32 | -2.780 ± 0.226 |
+| DP (resample, abstain) | 0.01 | 0.107 ± 0.023 | 0.006 ± 0.004 | 0.887 ± 0.023 | 2.85 ± 0.20 | 0.046 ± 0.029 |
+| DP (+judge, abstain) | 0.01 | 0.106 ± 0.023 | 0.006 ± 0.003 | 0.888 ± 0.023 | 2.91 ± 0.21 | 0.046 ± 0.028 |
+
+ fold                      policy  param  tune_reward
+    0             fixed-k (tuned)     17    -2.731765
+    0         margin stop (tuned)      3    -2.670066
+    0 margin stop+abstain (tuned) (5, 5)     0.033529
+    1             fixed-k (tuned)     21    -3.080588
+    1         margin stop (tuned)      2    -2.996503
+    1 margin stop+abstain (tuned) (5, 5)     0.008627
+    2             fixed-k (tuned)     21    -2.811765
+    2         margin stop (tuned)      3    -2.749404
+    2 margin stop+abstain (tuned) (5, 5)     0.018529
+    3             fixed-k (tuned)     21    -2.616505
+    3         margin stop (tuned)      3    -2.555466
+    3 margin stop+abstain (tuned) (5, 5)     0.027670
+    4             fixed-k (tuned)     17    -2.772233
+    4         margin stop (tuned)      3    -2.719898
+    4 margin stop+abstain (tuned) (5, 5)     0.023981
+                policy                          vs  mean_diff   ci_lo   ci_hi  wilcoxon_p  holm_p
+         DP (resample)             fixed-k (tuned)     0.0440  0.0275  0.0608      0.0000  0.0000
+         DP (resample)         margin stop (tuned)    -0.0189 -0.0368 -0.0004      0.0023  0.0083
+         DP (resample) margin stop+abstain (tuned)    -2.7958 -3.2128 -2.3795      0.0000  0.0000
+           DP (+judge)             fixed-k (tuned)     0.0451  0.0251  0.0663      0.0000  0.0000
+           DP (+judge)         margin stop (tuned)    -0.0178 -0.0386  0.0036      0.0042  0.0084
+           DP (+judge) margin stop+abstain (tuned)    -2.7946 -3.2090 -2.3779      0.0000  0.0000
+DP (resample, abstain)             fixed-k (tuned)     2.8713  2.4582  3.2832      0.0000  0.0000
+DP (resample, abstain)         margin stop (tuned)     2.8084  2.3918  3.2227      0.0000  0.0000
+DP (resample, abstain) margin stop+abstain (tuned)     0.0315  0.0033  0.0509      0.0000  0.0000
+  DP (+judge, abstain)             fixed-k (tuned)     2.8708  2.4565  3.2838      0.0000  0.0000
+  DP (+judge, abstain)         margin stop (tuned)     2.8079  2.3905  3.2219      0.0000  0.0000
+  DP (+judge, abstain) margin stop+abstain (tuned)     0.0310  0.0056  0.0492      0.0000  0.0000
+           DP (+judge)               DP (resample)     0.0012 -0.0094  0.0124      0.0483  0.0483
+  DP (+judge, abstain)      DP (resample, abstain)    -0.0005 -0.0040  0.0035      0.0021  0.0083
+DP (resample, abstain)               DP (resample)     2.8273  2.4116  3.2403      0.0000  0.0000
+  DP (+judge, abstain)                 DP (+judge)     2.8257  2.4104  3.2389      0.0000  0.0000
+done in 3.8s
+MATH_Llama-3-8B-Instruct lam=2 jr=0.5 judge=MATH_Llama-3-8B-Instruct_judge.csv -> results/final/MATH_Llama-3-8B-Instruct/lam2_jr0.5
+  fold 1: 102 train / 26 test, 12.2s
+  fold 2: 102 train / 26 test, 12.2s
+  fold 4: 103 train / 25 test, 12.2s
+  fold 3: 103 train / 25 test, 12.3s
+  fold 0: 102 train / 26 test, 12.6s
+Costs: c_s=0.01, c_j=0.5*c_s, lambda=2.0, H=20; judge file MATH_Llama-3-8B-Instruct_judge.csv; 100 test episodes/question; ± = standard error over 128 questions.
+
+| policy | param | accuracy | wrong | abstain | compute | reward |
+|---|---|---|---|---|---|---|
+| first answer | 1 | 0.264 ± 0.027 | 0.736 ± 0.027 | 0.000 ± 0.000 | 0.00 ± 0.00 | -1.208 ± 0.082 |
+| fixed-k (tuned) | 13/9 | 0.370 ± 0.036 | 0.630 ± 0.036 | 0.000 ± 0.000 | 10.41 ± 0.17 | -0.994 ± 0.107 |
+| margin stop (tuned) | 2/3 | 0.387 ± 0.037 | 0.613 ± 0.037 | 0.000 ± 0.000 | 10.35 ± 0.52 | -0.941 ± 0.113 |
+| margin stop+abstain (tuned) | (3, 5)/(4, 5) | 0.148 ± 0.025 | 0.036 ± 0.009 | 0.815 ± 0.025 | 3.75 ± 0.04 | 0.038 ± 0.033 |
+| fixed-k (oracle-tuned on test) | 13 | 0.378 ± 0.036 | 0.622 ± 0.036 | 0.000 ± 0.000 | 12.00 ± 0.00 | -0.987 ± 0.109 |
+| margin stop (oracle-tuned on test) | 2 | 0.387 ± 0.036 | 0.613 ± 0.036 | 0.000 ± 0.000 | 9.62 ± 0.51 | -0.936 ± 0.112 |
+| margin stop+abstain (oracle-tuned on test) | (3, 5) | 0.169 ± 0.028 | 0.040 ± 0.009 | 0.791 ± 0.027 | 3.71 ± 0.04 | 0.052 ± 0.036 |
+| DP (resample) | 0.01 | 0.390 ± 0.037 | 0.610 ± 0.037 | 0.000 ± 0.000 | 11.82 ± 0.36 | -0.948 ± 0.114 |
+| DP (+judge) | 0.01 | 0.390 ± 0.037 | 0.610 ± 0.037 | 0.000 ± 0.000 | 11.59 ± 0.36 | -0.946 ± 0.113 |
+| DP (resample, abstain) | 0.01 | 0.152 ± 0.027 | 0.026 ± 0.009 | 0.821 ± 0.028 | 3.80 ± 0.20 | 0.061 ± 0.034 |
+| DP (+judge, abstain) | 0.01 | 0.158 ± 0.028 | 0.022 ± 0.007 | 0.819 ± 0.028 | 4.16 ± 0.20 | 0.071 ± 0.033 |
+
+ fold                      policy  param  tune_reward
+    0             fixed-k (tuned)      9    -0.930588
+    0         margin stop (tuned)      2    -0.893226
+    0 margin stop+abstain (tuned) (3, 5)     0.076445
+    1             fixed-k (tuned)     13    -1.105000
+    1         margin stop (tuned)      2    -1.047974
+    1 margin stop+abstain (tuned) (4, 5)     0.030543
+    2             fixed-k (tuned)     13    -0.986176
+    2         margin stop (tuned)      3    -0.941757
+    2 margin stop+abstain (tuned) (3, 5)     0.053735
+    3             fixed-k (tuned)     13    -0.893495
+    3         margin stop (tuned)      2    -0.828511
+    3 margin stop+abstain (tuned) (3, 5)     0.064753
+    4             fixed-k (tuned)      9    -0.951359
+    4         margin stop (tuned)      2    -0.908717
+    4 margin stop+abstain (tuned) (3, 5)     0.062821
+                policy                          vs  mean_diff   ci_lo   ci_hi  wilcoxon_p  holm_p
+         DP (resample)             fixed-k (tuned)     0.0461  0.0202  0.0749      0.0803  0.4013
+         DP (resample)         margin stop (tuned)    -0.0067 -0.0192  0.0063      0.0882  0.4013
+         DP (resample) margin stop+abstain (tuned)    -0.9863 -1.1683 -0.8054      0.0000  0.0000
+           DP (+judge)             fixed-k (tuned)     0.0480  0.0217  0.0766      0.0606  0.3636
+           DP (+judge)         margin stop (tuned)    -0.0048 -0.0226  0.0131      0.4106  1.0000
+           DP (+judge) margin stop+abstain (tuned)    -0.9844 -1.1646 -0.8032      0.0000  0.0000
+DP (resample, abstain)             fixed-k (tuned)     1.0555  0.8865  1.2271      0.0000  0.0000
+DP (resample, abstain)         margin stop (tuned)     1.0027  0.8201  1.1876      0.0000  0.0000
+DP (resample, abstain) margin stop+abstain (tuned)     0.0232  0.0125  0.0337      0.0000  0.0000
+  DP (+judge, abstain)             fixed-k (tuned)     1.0658  0.8964  1.2384      0.0000  0.0000
+  DP (+judge, abstain)         margin stop (tuned)     1.0130  0.8290  1.1977      0.0000  0.0000
+  DP (+judge, abstain) margin stop+abstain (tuned)     0.0334  0.0186  0.0494      0.0000  0.0000
+           DP (+judge)               DP (resample)     0.0018 -0.0105  0.0152      0.9895  1.0000
+  DP (+judge, abstain)      DP (resample, abstain)     0.0103 -0.0035  0.0254      0.5073  1.0000
+DP (resample, abstain)               DP (resample)     1.0094  0.8252  1.1949      0.0000  0.0000
+  DP (+judge, abstain)                 DP (+judge)     1.0178  0.8351  1.2018      0.0000  0.0000
+done in 13.9s
+MATH_Llama-3-8B-Instruct lam=2 jr=1 judge=MATH_Llama-3-8B-Instruct_judge.csv -> results/final/MATH_Llama-3-8B-Instruct/lam2_jr1
+  fold 3: 103 train / 25 test, 11.9s
+  fold 0: 102 train / 26 test, 12.1s
+  fold 1: 102 train / 26 test, 12.3s
+  fold 4: 103 train / 25 test, 12.3s
+  fold 2: 102 train / 26 test, 12.3s
+Costs: c_s=0.01, c_j=1.0*c_s, lambda=2.0, H=20; judge file MATH_Llama-3-8B-Instruct_judge.csv; 100 test episodes/question; ± = standard error over 128 questions.
+
+| policy | param | accuracy | wrong | abstain | compute | reward |
+|---|---|---|---|---|---|---|
+| first answer | 1 | 0.264 ± 0.027 | 0.736 ± 0.027 | 0.000 ± 0.000 | 0.00 ± 0.00 | -1.208 ± 0.082 |
+| fixed-k (tuned) | 13/9 | 0.370 ± 0.036 | 0.630 ± 0.036 | 0.000 ± 0.000 | 10.41 ± 0.17 | -0.994 ± 0.107 |
+| margin stop (tuned) | 2/3 | 0.387 ± 0.037 | 0.613 ± 0.037 | 0.000 ± 0.000 | 10.35 ± 0.52 | -0.941 ± 0.113 |
+| margin stop+abstain (tuned) | (3, 5)/(4, 5) | 0.148 ± 0.025 | 0.036 ± 0.009 | 0.815 ± 0.025 | 3.75 ± 0.04 | 0.038 ± 0.033 |
+| fixed-k (oracle-tuned on test) | 13 | 0.378 ± 0.036 | 0.622 ± 0.036 | 0.000 ± 0.000 | 12.00 ± 0.00 | -0.987 ± 0.109 |
+| margin stop (oracle-tuned on test) | 2 | 0.387 ± 0.036 | 0.613 ± 0.036 | 0.000 ± 0.000 | 9.62 ± 0.51 | -0.936 ± 0.112 |
+| margin stop+abstain (oracle-tuned on test) | (3, 5) | 0.169 ± 0.028 | 0.040 ± 0.009 | 0.791 ± 0.027 | 3.71 ± 0.04 | 0.052 ± 0.036 |
+| DP (resample) | 0.01 | 0.390 ± 0.037 | 0.610 ± 0.037 | 0.000 ± 0.000 | 11.82 ± 0.36 | -0.948 ± 0.114 |
+| DP (+judge) | 0.01 | 0.391 ± 0.037 | 0.609 ± 0.037 | 0.000 ± 0.000 | 11.81 ± 0.36 | -0.946 ± 0.113 |
+| DP (resample, abstain) | 0.01 | 0.152 ± 0.027 | 0.026 ± 0.009 | 0.821 ± 0.028 | 3.80 ± 0.20 | 0.061 ± 0.034 |
+| DP (+judge, abstain) | 0.01 | 0.158 ± 0.028 | 0.023 ± 0.008 | 0.819 ± 0.028 | 4.27 ± 0.21 | 0.069 ± 0.033 |
+
+ fold                      policy  param  tune_reward
+    0             fixed-k (tuned)      9    -0.930588
+    0         margin stop (tuned)      2    -0.893226
+    0 margin stop+abstain (tuned) (3, 5)     0.076445
+    1             fixed-k (tuned)     13    -1.105000
+    1         margin stop (tuned)      2    -1.047974
+    1 margin stop+abstain (tuned) (4, 5)     0.030543
+    2             fixed-k (tuned)     13    -0.986176
+    2         margin stop (tuned)      3    -0.941757
+    2 margin stop+abstain (tuned) (3, 5)     0.053735
+    3             fixed-k (tuned)     13    -0.893495
+    3         margin stop (tuned)      2    -0.828511
+    3 margin stop+abstain (tuned) (3, 5)     0.064753
+    4             fixed-k (tuned)      9    -0.951359
+    4         margin stop (tuned)      2    -0.908717
+    4 margin stop+abstain (tuned) (3, 5)     0.062821
+                policy                          vs  mean_diff   ci_lo   ci_hi  wilcoxon_p  holm_p
+         DP (resample)             fixed-k (tuned)     0.0461  0.0202  0.0749      0.0803  0.3636
+         DP (resample)         margin stop (tuned)    -0.0067 -0.0192  0.0063      0.0882  0.3636
+         DP (resample) margin stop+abstain (tuned)    -0.9863 -1.1683 -0.8054      0.0000  0.0000
+           DP (+judge)             fixed-k (tuned)     0.0483  0.0222  0.0774      0.0606  0.3636
+           DP (+judge)         margin stop (tuned)    -0.0045 -0.0186  0.0098      0.2307  0.4614
+           DP (+judge) margin stop+abstain (tuned)    -0.9841 -1.1649 -0.8031      0.0000  0.0000
+DP (resample, abstain)             fixed-k (tuned)     1.0555  0.8865  1.2271      0.0000  0.0000
+DP (resample, abstain)         margin stop (tuned)     1.0027  0.8201  1.1876      0.0000  0.0000
+DP (resample, abstain) margin stop+abstain (tuned)     0.0232  0.0125  0.0337      0.0000  0.0000
+  DP (+judge, abstain)             fixed-k (tuned)     1.0631  0.8944  1.2349      0.0000  0.0000
+  DP (+judge, abstain)         margin stop (tuned)     1.0103  0.8271  1.1954      0.0000  0.0000
+  DP (+judge, abstain) margin stop+abstain (tuned)     0.0308  0.0177  0.0445      0.0000  0.0000
+           DP (+judge)               DP (resample)     0.0022 -0.0052  0.0104      0.0676  0.3636
+  DP (+judge, abstain)      DP (resample, abstain)     0.0076 -0.0027  0.0194      0.4806  0.4806
+DP (resample, abstain)               DP (resample)     1.0094  0.8252  1.1949      0.0000  0.0000
+  DP (+judge, abstain)                 DP (+judge)     1.0148  0.8314  1.1994      0.0000  0.0000
+done in 13.5s
+NOTE: data/processed/MATH_Llama-3-8B-Instruct_judge7b.csv missing; skipping 7B-judge runs (see colab/judge_7b.ipynb)
+GSM8K_Llama-3-8B-Instruct 
+         tercile  n_questions  top_share_min  top_share_max  accuracy  false_pass  false_fail  balanced_accuracy
+            all          127          0.119          1.000     0.645       0.260       0.548              0.596
+ most contested           43          0.119          0.790     0.641       0.225       0.659              0.558
+         middle           42          0.792          0.972     0.573       0.336       0.607              0.528
+least contested           42          0.973          1.000     0.724       0.219       0.384              0.699
+                    state  n_states  p_leader_correct  judge_lr_pass  judge_lr_fail  vote_lr_agree  vote_lr_disagree  judge_mi_bits  vote_mi_bits
+          unanimous (b=0)     63206             0.975          2.548          0.579          1.564             0.121          0.008         0.019
+clear lead (a-b>=2, b>=1)     31076             0.799          1.378          0.868          1.450             0.489          0.005         0.031
+     split (a-b<=1, b>=1)     20018             0.423          1.387          0.880          2.592             0.569          0.007         0.089
+               all states    114300             0.831          1.971          0.691          2.498             0.200          0.024         0.136
+MATH_Llama-3-8B-Instruct 
+         tercile  n_questions  top_share_min  top_share_max  accuracy  false_pass  false_fail  balanced_accuracy
+            all          128          0.015          0.983     0.740       0.139       0.736              0.563
+ most contested           43          0.015          0.193     0.830       0.110       0.702              0.594
+         middle           42          0.198          0.399     0.721       0.131       0.906              0.481
+least contested           43          0.422          0.983     0.667       0.188       0.646              0.583
+                    state  n_states  p_leader_correct  judge_lr_pass  judge_lr_fail  vote_lr_agree  vote_lr_disagree  judge_mi_bits  vote_mi_bits
+          unanimous (b=0)     11868             0.875          3.990          0.600          2.251             0.239          0.046         0.087
+clear lead (a-b>=2, b>=1)     26569             0.596          2.018          0.870          1.841             0.564          0.016         0.058
+     split (a-b<=1, b>=1)     76763             0.165          1.571          0.913          3.607             0.724          0.004         0.042
+               all states    115200             0.338          2.216          0.819          4.390             0.468          0.026         0.162
+                   config  answers  frac_all_8_agree  frac_correct_all_fail  frac_wrong_all_pass
+GSM8K_Llama-3-8B-Instruct      377              0.78                  0.484                0.146
+ MATH_Llama-3-8B-Instruct      384              0.87                  0.667                0.085
+# Worked example: GSM8K question 74
+
+**Question.** Jenna has 4 roommates. Each month the electricity bill is $100. How much will each roommate pay per year for electricity, if they divide the share equally?
+
+Correct answer 240; the most common wrong answer 300 divides by the 4 roommates and forgets Jenna herself.
+
+Answer frequencies over the 10,000 stored samples (data/processed/GSM8K_Llama-3-8B-Instruct.npz): 300: 82.2%, 240: 10.0%, 1200: 2.8%, cluster 3: 2.4%.
+
+3B judge verdicts on the representative solutions (data/processed/GSM8K_Llama-3-8B-Instruct_judge.csv): 300: 0/8 PASS, 240: 0/8 PASS, 1200: 0/8 PASS. The judge rejects the correct answer as often as the wrong ones, so its verdict carries no information on this question.
+
+**Model.** Belief model of CV fold 2, fit on the 102 questions of the other four folds (q74 excluded). Costs: λ = 2, c_s = 0.01, c_j = 0.02. Judge Beta priors fit on the training questions: wrong answers Beta(0.52, 1.48), correct answers Beta(0.92, 1.08).
+
+Episodes are test episodes 0-2 of eval/final.py (same seeds), so both policies see the same sample order. Belief = the DP's P(leader correct) given votes and judge verdicts (for fixed-k it is shown for reference only; fixed-k does not use it). Votes column = a-b (leader-runner-up); judge column = PASS/FAIL verdicts on the current leader.
+
+### Episode 0: DP (+judge, abstain)
+
+First sample: 300. Outcome: **wrong**, 2 resamples, 0 judge calls, episode reward -2.02.
+
+| step | n | votes a-b | leader | judge P/F | belief | action | result |
+|---|---|---|---|---|---|---|---|
+| 1 | 1 | 1-0 | 300 | 0/0 | 0.776 | resample | drew 300 |
+| 2 | 2 | 2-0 | 300 | 0/0 | 0.939 | resample | drew 300 |
+| 3 | 3 | 3-0 | 300 | 0/0 | 0.969 | submit | wrong (reward -2.00 before costs) |
+
+### Episode 0: fixed-k = 9 majority
+
+First sample: 300. Outcome: **wrong**, 8 resamples, 0 judge calls, episode reward -2.08.
+
+| step | n | votes a-b | leader | judge P/F | belief | action | result |
+|---|---|---|---|---|---|---|---|
+| 1 | 1 | 1-0 | 300 | 0/0 | 0.776 | resample | drew 300 |
+| 2 | 2 | 2-0 | 300 | 0/0 | 0.939 | resample | drew 300 |
+| 3 | 3 | 3-0 | 300 | 0/0 | 0.969 | resample | drew 300 |
+| 4 | 4 | 4-0 | 300 | 0/0 | 0.981 | resample | drew other wrong #24 |
+| 5 | 5 | 4-1 | 300 | 0/0 | 0.882 | resample | drew 300 |
+| 6 | 6 | 5-1 | 300 | 0/0 | 0.916 | resample | drew 300 |
+| 7 | 7 | 6-1 | 300 | 0/0 | 0.939 | resample | drew 300 |
+| 8 | 8 | 7-1 | 300 | 0/0 | 0.951 | resample | drew 300 |
+| 9 | 9 | 8-1 | 300 | 0/0 | 0.961 | submit | wrong (reward -2.00 before costs) |
+
+### Episode 1: DP (+judge, abstain)
+
+First sample: 300. Outcome: **wrong**, 19 resamples, 0 judge calls, episode reward -2.19.
+
+| step | n | votes a-b | leader | judge P/F | belief | action | result |
+|---|---|---|---|---|---|---|---|
+| 1 | 1 | 1-0 | 300 | 0/0 | 0.776 | resample | drew other wrong #5 |
+| 2 | 2 | 1-1 | 300 | 0/0 | 0.341 | resample | drew 1200 |
+| 3 | 3 | 1-1 | 300 | 0/0 | 0.206 | resample | drew other wrong #3 |
+| 4 | 4 | 1-1 | 300 | 0/0 | 0.154 | resample | drew 240 |
+| 5 | 5 | 1-1 | 300 | 0/0 | 0.119 | resample | drew 300 |
+| 6 | 6 | 2-1 | 300 | 0/0 | 0.438 | resample | drew 300 |
+| 7 | 7 | 3-1 | 300 | 0/0 | 0.612 | resample | drew 240 |
+| 8 | 8 | 3-2 | 300 | 0/0 | 0.480 | resample | drew 300 |
+| 9 | 9 | 4-2 | 300 | 0/0 | 0.596 | resample | drew 300 |
+| 10 | 10 | 5-2 | 300 | 0/0 | 0.661 | resample | drew 300 |
+| 11 | 11 | 6-2 | 300 | 0/0 | 0.700 | resample | drew 300 |
+| 12 | 12 | 7-2 | 300 | 0/0 | 0.737 | resample | drew 300 |
+| 13 | 13 | 8-2 | 300 | 0/0 | 0.760 | resample | drew 300 |
+| 14 | 14 | 9-2 | 300 | 0/0 | 0.785 | resample | drew 300 |
+| 15 | 15 | 10-2 | 300 | 0/0 | 0.799 | resample | drew 300 |
+| 16 | 16 | 11-2 | 300 | 0/0 | 0.817 | resample | drew 300 |
+| 17 | 17 | 12-2 | 300 | 0/0 | 0.849 | resample | drew 300 |
+| 18 | 18 | 13-2 | 300 | 0/0 | 0.866 | resample | drew 1200 |
+| 19 | 19 | 13-2 | 300 | 0/0 | 0.857 | resample | drew 300 |
+| 20 | 20 | 14-2 | 300 | 0/0 | 0.879 | submit | wrong (reward -2.00 before costs) |
+
+### Episode 1: fixed-k = 9 majority
+
+First sample: 300. Outcome: **wrong**, 8 resamples, 0 judge calls, episode reward -2.08.
+
+| step | n | votes a-b | leader | judge P/F | belief | action | result |
+|---|---|---|---|---|---|---|---|
+| 1 | 1 | 1-0 | 300 | 0/0 | 0.776 | resample | drew other wrong #5 |
+| 2 | 2 | 1-1 | 300 | 0/0 | 0.341 | resample | drew 1200 |
+| 3 | 3 | 1-1 | 300 | 0/0 | 0.206 | resample | drew other wrong #3 |
+| 4 | 4 | 1-1 | 300 | 0/0 | 0.154 | resample | drew 240 |
+| 5 | 5 | 1-1 | 300 | 0/0 | 0.119 | resample | drew 300 |
+| 6 | 6 | 2-1 | 300 | 0/0 | 0.438 | resample | drew 300 |
+| 7 | 7 | 3-1 | 300 | 0/0 | 0.612 | resample | drew 240 |
+| 8 | 8 | 3-2 | 300 | 0/0 | 0.480 | resample | drew 300 |
+| 9 | 9 | 4-2 | 300 | 0/0 | 0.596 | submit | wrong (reward -2.00 before costs) |
+
+### Episode 2: DP (+judge, abstain)
+
+First sample: 300. Outcome: **wrong**, 2 resamples, 0 judge calls, episode reward -2.02.
+
+| step | n | votes a-b | leader | judge P/F | belief | action | result |
+|---|---|---|---|---|---|---|---|
+| 1 | 1 | 1-0 | 300 | 0/0 | 0.776 | resample | drew 300 |
+| 2 | 2 | 2-0 | 300 | 0/0 | 0.939 | resample | drew 300 |
+| 3 | 3 | 3-0 | 300 | 0/0 | 0.969 | submit | wrong (reward -2.00 before costs) |
+
+### Episode 2: fixed-k = 9 majority
+
+First sample: 300. Outcome: **wrong**, 8 resamples, 0 judge calls, episode reward -2.08.
+
+| step | n | votes a-b | leader | judge P/F | belief | action | result |
+|---|---|---|---|---|---|---|---|
+| 1 | 1 | 1-0 | 300 | 0/0 | 0.776 | resample | drew 300 |
+| 2 | 2 | 2-0 | 300 | 0/0 | 0.939 | resample | drew 300 |
+| 3 | 3 | 3-0 | 300 | 0/0 | 0.969 | resample | drew 300 |
+| 4 | 4 | 4-0 | 300 | 0/0 | 0.981 | resample | drew 300 |
+| 5 | 5 | 5-0 | 300 | 0/0 | 0.987 | resample | drew 300 |
+| 6 | 6 | 6-0 | 300 | 0/0 | 0.991 | resample | drew 300 |
+| 7 | 7 | 7-0 | 300 | 0/0 | 0.993 | resample | drew 240 |
+| 8 | 8 | 7-1 | 300 | 0/0 | 0.951 | resample | drew 300 |
+| 9 | 9 | 8-1 | 300 | 0/0 | 0.961 | submit | wrong (reward -2.00 before costs) |
+
+### All 100 test episodes for q74 (results/final/GSM8K_Llama-3-8B-Instruct/lam2_jr2/per_question.csv)
+
+| policy | accuracy | wrong | abstain | compute | reward |
+|---|---|---|---|---|---|
+| fixed-k = 9 | 0.00 | 1.00 | 0.00 | 8.00 | -2.080 |
+| DP (resample) | 0.00 | 1.00 | 0.00 | 4.10 | -2.041 |
+| DP (resample, abstain) | 0.00 | 0.97 | 0.03 | 4.47 | -1.985 |
+| DP (+judge, abstain) | 0.00 | 0.96 | 0.04 | 4.75 | -1.968 |
+
+Policy map: results/final/figures/worked_example_q74_policy_map.pdf (top: no judge verdicts; bottom: after one FAIL verdict).
+
+| n | a-b | P(correct) | action | P(correct) after 1 FAIL | action after 1 FAIL |
+|---|---|---|---|---|---|
+| 1 | 1-0 | 0.776 | resample | 0.716 | resample |
+| 2 | 1-1 | 0.341 | resample | 0.273 | resample |
+| 2 | 2-0 | 0.939 | resample | 0.918 | resample |
+| 3 | 1-1 | 0.206 | resample | 0.158 | resample |
+| 3 | 2-1 | 0.705 | resample | 0.635 | resample |
+| 3 | 3-0 | 0.969 | submit | 0.958 | resample |
+| 4 | 1-1 | 0.154 | resample | 0.116 | resample |
+| 4 | 2-1 | 0.579 | resample | 0.500 | resample |
+| 4 | 2-2 | 0.431 | resample | 0.355 | resample |
+| 4 | 3-1 | 0.822 | resample | 0.770 | resample |
+| 4 | 4-0 | 0.981 | submit | 0.974 | submit |
+| 5 | 1-1 | 0.119 | resample | 0.089 | resample |
+| 5 | 2-1 | 0.497 | resample | 0.417 | resample |
+| 5 | 2-2 | 0.400 | resample | 0.326 | resample |
+| 5 | 3-1 | 0.720 | resample | 0.652 | resample |
+| 5 | 3-2 | 0.590 | resample | 0.511 | resample |
+| 5 | 4-1 | 0.882 | resample | 0.844 | resample |
+| 5 | 5-0 | 0.987 | submit | 0.982 | submit |
+| 6 | 1-1 | 0.094 | abstain | 0.070 | abstain |
+| 6 | 2-1 | 0.438 | resample | 0.362 | resample |
+| 6 | 2-2 | 0.364 | resample | 0.294 | resample |
+| 6 | 3-1 | 0.659 | resample | 0.584 | resample |
+| 6 | 3-2 | 0.532 | resample | 0.452 | resample |
+| 6 | 3-3 | 0.478 | resample | 0.400 | resample |
+| 6 | 4-1 | 0.809 | resample | 0.755 | resample |
+| 6 | 4-2 | 0.660 | resample | 0.585 | resample |
+| 6 | 5-1 | 0.916 | resample | 0.888 | resample |
+| 6 | 6-0 | 0.991 | submit | 0.988 | submit |
+7B judge comparison: False
+config                                                      belief  n_states  frac_correct    ECE  Brier  Brier_const
+ gsm8k          vote-only pc[n,a,b], all trajectory states n=1..21    266700        0.8459 0.0144 0.0943       0.1303
+ gsm8k                vote-only pc[n,a,b], trajectory states n<=10    127000        0.8282 0.0090 0.1006       0.1423
+ gsm8k                      vote-only pc[n,a,b], DP-visited states     68479        0.7249 0.0085 0.1592       0.1994
+ gsm8k                  posterior (votes+judge), DP-visited states     68479        0.7249 0.0092 0.1592       0.1994
+ gsm8k     vote-only pc[n,a,b], DP-visited states with >=1 verdict      5232        0.6338 0.0521 0.2290       0.2321
+ gsm8k posterior (votes+judge), DP-visited states with >=1 verdict      5232        0.6338 0.0332 0.2288       0.2321
+ gsm8k      posterior after 1 probe verdict, all trajectory states    266700        0.8459 0.0187 0.0937       0.1303
+ gsm8k     posterior after 2 probe verdicts, all trajectory states    266700        0.8459 0.0236 0.0948       0.1303
+ gsm8k     posterior after 3 probe verdicts, all trajectory states    266700        0.8459 0.0282 0.0961       0.1303
+  math          vote-only pc[n,a,b], all trajectory states n=1..21    268800        0.3562 0.0101 0.1525       0.2293
+  math                vote-only pc[n,a,b], trajectory states n<=10    128000        0.3234 0.0082 0.1474       0.2188
+  math                      vote-only pc[n,a,b], DP-visited states     61871        0.4216 0.0172 0.1733       0.2439
+  math                  posterior (votes+judge), DP-visited states     61871        0.4216 0.0168 0.1733       0.2439
+  math     vote-only pc[n,a,b], DP-visited states with >=1 verdict       621        0.5652 0.0431 0.2440       0.2457
+  math posterior (votes+judge), DP-visited states with >=1 verdict       621        0.5652 0.0445 0.2421       0.2457
+  math      posterior after 1 probe verdict, all trajectory states    268800        0.3562 0.0145 0.1518       0.2293
+  math     posterior after 2 probe verdicts, all trajectory states    268800        0.3562 0.0185 0.1528       0.2293
+  math     posterior after 3 probe verdicts, all trajectory states    268800        0.3562 0.0240 0.1537       0.2293
+tables: ['calibration.tex', 'headline_gsm8k_lam1.2_jr2.tex', 'headline_gsm8k_lam2_jr0.5.tex', 'headline_gsm8k_lam2_jr1.tex', 'headline_gsm8k_lam2_jr2.tex', 'headline_gsm8k_lam5_jr2.tex', 'headline_math_lam1.2_jr2.tex', 'headline_math_lam2_jr0.5.tex', 'headline_math_lam2_jr1.tex', 'headline_math_lam2_jr2.tex', 'headline_math_lam5_jr2.tex', 'judge_informativeness.tex', 'judge_terciles.tex', 'judge_value_gsm8k.tex', 'judge_value_math.tex', 'reward_vs_lambda_gsm8k.tex', 'reward_vs_lambda_math.tex', 'significance_gsm8k_lam1.2.tex', 'significance_gsm8k_lam2.tex', 'significance_gsm8k_lam5.tex', 'significance_math_lam1.2.tex', 'significance_math_lam2.tex', 'significance_math_lam5.tex', 'tuned_params_gsm8k.tex', 'tuned_params_math.tex']
+figures: ['accuracy_vs_compute_gsm8k.pdf', 'accuracy_vs_compute_math.pdf', 'judge_by_contestedness_gsm8k.pdf', 'judge_by_contestedness_math.pdf', 'policy_map_gsm8k.pdf', 'policy_map_math.pdf', 'reliability_gsm8k.pdf', 'reliability_math.pdf', 'reward_vs_compute_gsm8k.pdf', 'reward_vs_compute_math.pdf', 'reward_vs_lambda_gsm8k.pdf', 'reward_vs_lambda_math.pdf', 'worked_example_q74_policy_map.pdf', 'wrong_vs_compute_gsm8k.pdf', 'wrong_vs_compute_math.pdf']
+wrote results/final/EXPERIMENTS.md (756 lines)
+.............................                                            [100%]
+29 passed in 3.07s

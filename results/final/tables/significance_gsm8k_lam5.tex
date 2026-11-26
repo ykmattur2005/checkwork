@@ -1,0 +1,28 @@
+\begin{table}[t]
+\centering
+\small
+\caption{GSM8K, $\lambda$=5, c\_j/c\_s=2: paired per-question reward differences (policy minus vs). 95\% percentile bootstrap CI over questions (10,000 resamples); two-sided Wilcoxon signed-rank p, Holm-adjusted within the table. 'significant': yes = CI excludes 0 and Holm p<0.05; 'mean only' / 'median only' = only one test rejects.}
+\label{tab:significance_gsm8k_lam5}
+\begin{tabular}{llrrrrrl}
+\toprule
+policy & vs & mean diff [95\% CI] & median diff & Wilcoxon p & Holm p & q better/worse & significant \\
+\midrule
+DP (resample) & fixed-k (tuned) & +0.081 [+0.046, +0.121] & +0.059 & 1.9e-12 & 2.8e-11 & 89\%/11\% & yes \\
+DP (resample) & margin stop (tuned) & -0.013 [-0.023, -0.003] & -0.003 & 1.7e-08 & 2.0e-07 & 11\%/75\% & yes \\
+DP (resample) & margin stop+abstain (tuned) & -0.360 [-0.583, -0.161] & +0.040 & 0.003 & 0.029 & 80\%/20\% & yes \\
+DP (+judge) & fixed-k (tuned) & +0.084 [+0.048, +0.124] & +0.058 & 1.6e-13 & 2.5e-12 & 90\%/10\% & yes \\
+DP (+judge) & margin stop (tuned) & -0.010 [-0.020, +0.002] & -0.003 & 2.6e-08 & 2.8e-07 & 11\%/75\% & median only \\
+DP (+judge) & margin stop+abstain (tuned) & -0.358 [-0.580, -0.158] & +0.040 & 0.003 & 0.029 & 80\%/20\% & yes \\
+DP (resample, abstain) & fixed-k (tuned) & +0.465 [+0.270, +0.680] & +0.027 & 0.003 & 0.027 & 68\%/32\% & yes \\
+DP (resample, abstain) & margin stop (tuned) & +0.371 [+0.171, +0.594] & -0.032 & 0.003 & 0.029 & 20\%/80\% & yes \\
+DP (resample, abstain) & margin stop+abstain (tuned) & +0.023 [+0.001, +0.044] & +0.015 & 2.5e-10 & 3.5e-09 & 84\%/16\% & yes \\
+DP (+judge, abstain) & fixed-k (tuned) & +0.465 [+0.270, +0.680] & +0.027 & 0.003 & 0.029 & 69\%/31\% & yes \\
+DP (+judge, abstain) & margin stop (tuned) & +0.371 [+0.172, +0.594] & -0.033 & 0.003 & 0.029 & 20\%/80\% & yes \\
+DP (+judge, abstain) & margin stop+abstain (tuned) & +0.023 [-0.003, +0.048] & +0.010 & 5.8e-10 & 7.5e-09 & 83\%/17\% & median only \\
+DP (+judge) & DP (resample) & +0.003 [-0.006, +0.013] & +0.000 & 0.007 & 0.029 & 9\%/35\% & median only \\
+DP (+judge, abstain) & DP (resample, abstain) & -0.000 [-0.014, +0.011] & +0.000 & 0.527 & 0.527 & 21\%/37\% & no \\
+DP (resample, abstain) & DP (resample) & +0.384 [+0.184, +0.605] & -0.032 & 0.004 & 0.029 & 20\%/80\% & yes \\
+DP (+judge, abstain) & DP (+judge) & +0.381 [+0.182, +0.603] & -0.032 & 0.004 & 0.029 & 20\%/80\% & yes \\
+\bottomrule
+\end{tabular}
+\end{table}

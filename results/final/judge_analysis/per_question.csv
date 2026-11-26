@@ -1,0 +1,256 @@
+config,qid,pass_at_1,top_share,top_is_correct,tercile,judge_pass_correct,judge_pass_wrong_mean
+GSM8K_Llama-3-8B-Instruct,0,0.9134,0.9134,True,middle,1.0,0.5
+GSM8K_Llama-3-8B-Instruct,1,0.3907,0.3907,True,most contested,0.375,0.75
+GSM8K_Llama-3-8B-Instruct,2,0.8507,0.8507,True,middle,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,3,0.1751,0.5003,False,most contested,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,4,0.7878,0.7878,True,most contested,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,5,0.991,0.991,True,least contested,0.375,0.0625
+GSM8K_Llama-3-8B-Instruct,6,0.608,0.608,True,most contested,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,7,0.8614,0.8614,True,middle,0.0,0.75
+GSM8K_Llama-3-8B-Instruct,8,0.9938,0.9938,True,least contested,1.0,0.875
+GSM8K_Llama-3-8B-Instruct,9,0.9974,0.9974,True,least contested,1.0,0.0
+GSM8K_Llama-3-8B-Instruct,10,0.4795,0.4857,False,most contested,0.25,0.1875
+GSM8K_Llama-3-8B-Instruct,11,0.9986,0.9986,True,least contested,0.0,0.0625
+GSM8K_Llama-3-8B-Instruct,12,0.9912,0.9912,True,least contested,1.0,0.125
+GSM8K_Llama-3-8B-Instruct,13,0.9246,0.9246,True,middle,0.0,0.5
+GSM8K_Llama-3-8B-Instruct,14,0.9931,0.9931,True,least contested,0.0,0.5
+GSM8K_Llama-3-8B-Instruct,15,0.9996,0.9996,True,least contested,0.125,0.0625
+GSM8K_Llama-3-8B-Instruct,16,0.9373,0.9373,True,middle,0.0,0.1875
+GSM8K_Llama-3-8B-Instruct,17,0.8491,0.8491,True,middle,0.0,0.3125
+GSM8K_Llama-3-8B-Instruct,18,0.9973,0.9973,True,least contested,1.0,0.875
+GSM8K_Llama-3-8B-Instruct,19,0.3894,0.3894,True,most contested,0.5,0.0
+GSM8K_Llama-3-8B-Instruct,20,0.9956,0.9956,True,least contested,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,21,0.0393,0.5109,False,most contested,,0.125
+GSM8K_Llama-3-8B-Instruct,22,0.9936,0.9936,True,least contested,0.0,0.125
+GSM8K_Llama-3-8B-Instruct,23,0.9721,0.9721,True,middle,0.0,0.0625
+GSM8K_Llama-3-8B-Instruct,24,0.9992,0.9992,True,least contested,1.0,0.0
+GSM8K_Llama-3-8B-Instruct,25,1.0,1.0,True,least contested,1.0,
+GSM8K_Llama-3-8B-Instruct,26,0.9955,0.9955,True,least contested,1.0,0.4375
+GSM8K_Llama-3-8B-Instruct,27,0.8657,0.8657,True,middle,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,28,0.8374,0.8374,True,middle,0.0,0.8125
+GSM8K_Llama-3-8B-Instruct,29,0.95,0.95,True,middle,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,30,0.8824,0.8824,True,middle,1.0,0.0
+GSM8K_Llama-3-8B-Instruct,31,0.6059,0.6059,True,most contested,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,32,0.8734,0.8734,True,middle,1.0,0.0
+GSM8K_Llama-3-8B-Instruct,33,0.8411,0.8411,True,middle,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,34,0.4828,0.4828,True,most contested,0.0,0.3125
+GSM8K_Llama-3-8B-Instruct,35,1.0,1.0,True,least contested,1.0,
+GSM8K_Llama-3-8B-Instruct,36,0.7234,0.7234,True,most contested,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,37,0.9992,0.9992,True,least contested,1.0,0.5625
+GSM8K_Llama-3-8B-Instruct,38,0.7326,0.7326,True,most contested,1.0,0.9375
+GSM8K_Llama-3-8B-Instruct,39,0.3407,0.3407,True,most contested,0.0,0.9375
+GSM8K_Llama-3-8B-Instruct,40,0.7179,0.7179,True,most contested,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,41,0.9945,0.9945,True,least contested,1.0,0.0
+GSM8K_Llama-3-8B-Instruct,42,0.8269,0.8269,True,middle,0.0,0.5
+GSM8K_Llama-3-8B-Instruct,43,0.9678,0.9678,True,middle,1.0,0.0
+GSM8K_Llama-3-8B-Instruct,44,0.2184,0.2184,True,most contested,0.0,0.5
+GSM8K_Llama-3-8B-Instruct,45,0.9395,0.9395,True,middle,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,46,0.6098,0.6098,True,most contested,0.5,0.5
+GSM8K_Llama-3-8B-Instruct,47,0.9891,0.9891,True,least contested,0.0,1.0
+GSM8K_Llama-3-8B-Instruct,48,0.8941,0.8941,True,middle,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,49,0.9971,0.9971,True,least contested,1.0,0.375
+GSM8K_Llama-3-8B-Instruct,50,0.9564,0.9564,True,middle,1.0,0.5
+GSM8K_Llama-3-8B-Instruct,51,0.9978,0.9978,True,least contested,1.0,0.0
+GSM8K_Llama-3-8B-Instruct,52,0.9998,0.9998,True,least contested,1.0,0.0625
+GSM8K_Llama-3-8B-Instruct,53,0.9723,0.9723,True,middle,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,54,0.4803,0.4803,True,most contested,0.625,0.1875
+GSM8K_Llama-3-8B-Instruct,55,0.9729,0.9729,True,least contested,0.0,0.5
+GSM8K_Llama-3-8B-Instruct,56,0.9833,0.9833,True,least contested,0.0,0.0625
+GSM8K_Llama-3-8B-Instruct,57,0.1974,0.2754,False,most contested,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,58,0.042,0.2605,False,most contested,,0.0
+GSM8K_Llama-3-8B-Instruct,59,0.937,0.937,True,middle,1.0,0.6875
+GSM8K_Llama-3-8B-Instruct,60,0.9915,0.9915,True,least contested,0.75,0.5
+GSM8K_Llama-3-8B-Instruct,61,0.9996,0.9996,True,least contested,1.0,0.3125
+GSM8K_Llama-3-8B-Instruct,62,0.5372,0.5372,True,most contested,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,63,0.8494,0.8494,True,middle,0.75,1.0
+GSM8K_Llama-3-8B-Instruct,64,0.9235,0.9235,True,middle,1.0,1.0
+GSM8K_Llama-3-8B-Instruct,65,0.8908,0.8908,True,middle,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,66,0.8941,0.8941,True,middle,0.875,0.9375
+GSM8K_Llama-3-8B-Instruct,67,0.9612,0.9612,True,middle,1.0,0.6875
+GSM8K_Llama-3-8B-Instruct,68,0.9934,0.9934,True,least contested,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,69,0.9945,0.9945,True,least contested,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,70,0.119,0.119,True,most contested,0.875,0.375
+GSM8K_Llama-3-8B-Instruct,71,0.6104,0.6104,True,most contested,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,72,0.5928,0.5928,True,most contested,0.875,0.0625
+GSM8K_Llama-3-8B-Instruct,73,0.9716,0.9716,True,middle,1.0,0.0
+GSM8K_Llama-3-8B-Instruct,74,0.1,0.8221,False,middle,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,75,0.993,0.993,True,least contested,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,76,0.8683,0.8683,True,middle,0.0,0.125
+GSM8K_Llama-3-8B-Instruct,77,0.9973,0.9973,True,least contested,0.875,0.125
+GSM8K_Llama-3-8B-Instruct,78,0.9935,0.9935,True,least contested,1.0,0.0
+GSM8K_Llama-3-8B-Instruct,79,0.0065,0.6499,False,most contested,,0.0
+GSM8K_Llama-3-8B-Instruct,80,0.9944,0.9944,True,least contested,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,81,0.1709,0.3333,False,most contested,1.0,0.1875
+GSM8K_Llama-3-8B-Instruct,82,0.9983,0.9983,True,least contested,0.125,0.0
+GSM8K_Llama-3-8B-Instruct,83,0.912,0.912,True,middle,0.0,0.5625
+GSM8K_Llama-3-8B-Instruct,84,0.9753,0.9753,True,least contested,1.0,0.0
+GSM8K_Llama-3-8B-Instruct,85,0.956,0.956,True,middle,1.0,0.0
+GSM8K_Llama-3-8B-Instruct,86,0.9647,0.9647,True,middle,1.0,0.25
+GSM8K_Llama-3-8B-Instruct,87,0.9719,0.9719,True,middle,0.0,1.0
+GSM8K_Llama-3-8B-Instruct,88,0.9992,0.9992,True,least contested,0.625,0.0
+GSM8K_Llama-3-8B-Instruct,89,0.9365,0.9365,True,middle,0.0,0.75
+GSM8K_Llama-3-8B-Instruct,90,0.8565,0.8565,True,middle,0.0,0.875
+GSM8K_Llama-3-8B-Instruct,91,0.9892,0.9892,True,least contested,1.0,0.0
+GSM8K_Llama-3-8B-Instruct,92,0.985,0.985,True,least contested,1.0,0.125
+GSM8K_Llama-3-8B-Instruct,93,0.3592,0.3592,True,most contested,1.0,0.0
+GSM8K_Llama-3-8B-Instruct,94,0.2199,0.6684,False,most contested,0.0,0.375
+GSM8K_Llama-3-8B-Instruct,95,0.1491,0.1491,True,most contested,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,96,0.1377,0.4171,False,most contested,1.0,0.0625
+GSM8K_Llama-3-8B-Instruct,97,0.9475,0.9475,True,middle,1.0,0.75
+GSM8K_Llama-3-8B-Instruct,98,0.9996,0.9996,True,least contested,1.0,0.25
+GSM8K_Llama-3-8B-Instruct,99,0.3252,0.4953,False,most contested,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,100,0.9208,0.9208,True,middle,0.875,0.125
+GSM8K_Llama-3-8B-Instruct,101,0.3108,0.6207,False,most contested,0.0,0.8125
+GSM8K_Llama-3-8B-Instruct,102,0.3816,0.3816,True,most contested,1.0,0.3125
+GSM8K_Llama-3-8B-Instruct,103,0.7137,0.7137,True,most contested,1.0,0.6875
+GSM8K_Llama-3-8B-Instruct,104,0.9754,0.9754,True,least contested,1.0,0.5625
+GSM8K_Llama-3-8B-Instruct,105,0.78,0.78,True,most contested,1.0,0.5
+GSM8K_Llama-3-8B-Instruct,106,0.1757,0.6066,False,most contested,0.0,1.0
+GSM8K_Llama-3-8B-Instruct,107,0.667,0.667,True,most contested,1.0,0.0
+GSM8K_Llama-3-8B-Instruct,108,0.4617,0.4617,True,most contested,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,109,0.9275,0.9275,True,middle,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,110,0.9955,0.9955,True,least contested,0.5,0.0
+GSM8K_Llama-3-8B-Instruct,111,0.277,0.3195,False,most contested,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,112,0.9984,0.9984,True,least contested,1.0,0.1875
+GSM8K_Llama-3-8B-Instruct,113,0.5701,0.5701,True,most contested,0.0,0.1875
+GSM8K_Llama-3-8B-Instruct,114,0.792,0.792,True,middle,0.0,0.0625
+GSM8K_Llama-3-8B-Instruct,115,0.8723,0.8723,True,middle,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,116,0.7137,0.7137,True,most contested,1.0,0.3125
+GSM8K_Llama-3-8B-Instruct,117,0.9972,0.9972,True,least contested,1.0,0.5
+GSM8K_Llama-3-8B-Instruct,118,0.9735,0.9735,True,least contested,0.5,0.0
+GSM8K_Llama-3-8B-Instruct,119,0.5158,0.5158,True,most contested,0.0,0.0625
+GSM8K_Llama-3-8B-Instruct,120,0.2057,0.7903,False,most contested,0.625,0.125
+GSM8K_Llama-3-8B-Instruct,121,0.757,0.757,True,most contested,0.0,0.0
+GSM8K_Llama-3-8B-Instruct,122,0.9966,0.9966,True,least contested,0.0,0.5
+GSM8K_Llama-3-8B-Instruct,123,0.9117,0.9117,True,middle,1.0,0.6875
+GSM8K_Llama-3-8B-Instruct,124,0.9658,0.9658,True,middle,1.0,0.5
+GSM8K_Llama-3-8B-Instruct,125,0.7694,0.7694,True,most contested,0.0,0.4375
+GSM8K_Llama-3-8B-Instruct,126,0.8835,0.8835,True,middle,0.0,0.0
+MATH_Llama-3-8B-Instruct,0,0.0339,0.1148,False,most contested,,0.041666666666666664
+MATH_Llama-3-8B-Instruct,1,0.2477,0.3727,False,middle,0.0,0.0
+MATH_Llama-3-8B-Instruct,2,0.8526,0.8526,True,least contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,3,0.9552,0.9552,True,least contested,1.0,0.75
+MATH_Llama-3-8B-Instruct,4,0.4788,0.4788,True,least contested,1.0,0.0
+MATH_Llama-3-8B-Instruct,5,0.1202,0.1202,True,most contested,1.0,0.0625
+MATH_Llama-3-8B-Instruct,6,0.0529,0.2433,False,middle,1.0,0.0
+MATH_Llama-3-8B-Instruct,7,0.1437,0.1437,True,most contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,8,0.9736,0.9736,True,least contested,1.0,0.8125
+MATH_Llama-3-8B-Instruct,9,0.1366,0.1366,True,most contested,0.0,0.125
+MATH_Llama-3-8B-Instruct,10,0.8872,0.8872,True,least contested,1.0,0.0
+MATH_Llama-3-8B-Instruct,11,0.0019,0.0851,False,most contested,,0.375
+MATH_Llama-3-8B-Instruct,12,0.8782,0.8782,True,least contested,1.0,0.0
+MATH_Llama-3-8B-Instruct,13,0.0614,0.1337,False,most contested,1.0,0.0
+MATH_Llama-3-8B-Instruct,14,0.2028,0.4221,False,least contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,15,0.0135,0.286,False,middle,,0.0
+MATH_Llama-3-8B-Instruct,16,0.0062,0.2579,False,middle,,0.16666666666666666
+MATH_Llama-3-8B-Instruct,17,0.0466,0.1535,False,most contested,,0.125
+MATH_Llama-3-8B-Instruct,18,0.1312,0.474,False,least contested,1.0,0.0
+MATH_Llama-3-8B-Instruct,19,0.2208,0.2208,True,middle,0.0,0.0
+MATH_Llama-3-8B-Instruct,20,0.0997,0.1576,False,most contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,21,0.275,0.275,True,middle,0.0,0.5625
+MATH_Llama-3-8B-Instruct,22,0.9335,0.9335,True,least contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,23,0.1926,0.1926,True,most contested,0.875,0.0
+MATH_Llama-3-8B-Instruct,24,0.8819,0.8819,True,least contested,0.0,0.5625
+MATH_Llama-3-8B-Instruct,25,0.6301,0.6301,True,least contested,0.0,0.625
+MATH_Llama-3-8B-Instruct,26,0.6347,0.6347,True,least contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,27,0.2298,0.2298,True,middle,0.0,1.0
+MATH_Llama-3-8B-Instruct,28,0.1302,0.3834,False,middle,,0.0
+MATH_Llama-3-8B-Instruct,29,0.6892,0.6892,True,least contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,30,0.9468,0.9468,True,least contested,1.0,0.0
+MATH_Llama-3-8B-Instruct,31,0.0098,0.1396,False,most contested,,0.2916666666666667
+MATH_Llama-3-8B-Instruct,32,0.5026,0.5026,True,least contested,1.0,0.5
+MATH_Llama-3-8B-Instruct,33,0.0166,0.0359,False,most contested,,0.2916666666666667
+MATH_Llama-3-8B-Instruct,34,0.0358,0.2026,False,middle,,0.4583333333333333
+MATH_Llama-3-8B-Instruct,35,0.7849,0.7849,True,least contested,0.125,0.0
+MATH_Llama-3-8B-Instruct,36,0.0817,0.2106,False,middle,0.0,0.0
+MATH_Llama-3-8B-Instruct,37,0.9519,0.9519,True,least contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,38,0.2275,0.2275,True,middle,0.0,0.0
+MATH_Llama-3-8B-Instruct,39,0.4667,0.4667,True,least contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,40,0.0137,0.0603,False,most contested,,0.0
+MATH_Llama-3-8B-Instruct,41,0.0018,0.2163,False,middle,,0.0
+MATH_Llama-3-8B-Instruct,42,0.0,0.0152,False,most contested,,0.0
+MATH_Llama-3-8B-Instruct,43,0.8668,0.8668,True,least contested,0.0,0.5
+MATH_Llama-3-8B-Instruct,44,0.0687,0.399,False,middle,0.0,0.5
+MATH_Llama-3-8B-Instruct,45,0.0105,0.0664,False,most contested,,0.0
+MATH_Llama-3-8B-Instruct,46,0.0063,0.2253,False,middle,,0.0
+MATH_Llama-3-8B-Instruct,47,0.2894,0.2894,True,middle,0.0,0.0
+MATH_Llama-3-8B-Instruct,48,0.1242,0.1242,True,most contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,49,0.0608,0.1622,False,most contested,,0.0
+MATH_Llama-3-8B-Instruct,50,0.0928,0.141,False,most contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,51,0.0434,0.2275,False,middle,,0.0
+MATH_Llama-3-8B-Instruct,52,0.0011,0.2309,False,middle,,0.0
+MATH_Llama-3-8B-Instruct,53,0.0024,0.2951,False,middle,,0.20833333333333334
+MATH_Llama-3-8B-Instruct,54,0.1201,0.1378,False,most contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,55,0.048,0.319,False,middle,,0.0
+MATH_Llama-3-8B-Instruct,56,0.0001,0.0692,False,most contested,,0.3333333333333333
+MATH_Llama-3-8B-Instruct,57,0.0099,0.1166,False,most contested,,0.0
+MATH_Llama-3-8B-Instruct,58,0.5921,0.5921,True,least contested,0.0,0.0625
+MATH_Llama-3-8B-Instruct,59,0.0076,0.1643,False,most contested,,0.0
+MATH_Llama-3-8B-Instruct,60,0.0871,0.1908,False,most contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,61,0.001,0.1057,False,most contested,,0.0
+MATH_Llama-3-8B-Instruct,62,0.0028,0.2194,False,middle,,0.125
+MATH_Llama-3-8B-Instruct,63,0.2922,0.2922,True,middle,0.0,0.5
+MATH_Llama-3-8B-Instruct,64,0.2571,0.2571,True,middle,0.0,0.25
+MATH_Llama-3-8B-Instruct,65,0.0002,0.0862,False,most contested,,0.041666666666666664
+MATH_Llama-3-8B-Instruct,66,0.0215,0.2775,False,middle,,0.041666666666666664
+MATH_Llama-3-8B-Instruct,67,0.255,0.255,True,middle,0.0,0.0
+MATH_Llama-3-8B-Instruct,68,0.5628,0.5628,True,least contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,69,0.0288,0.1984,False,middle,,0.041666666666666664
+MATH_Llama-3-8B-Instruct,70,0.0232,0.0938,False,most contested,,0.0
+MATH_Llama-3-8B-Instruct,71,0.0524,0.0811,False,most contested,,0.375
+MATH_Llama-3-8B-Instruct,72,0.0004,0.2294,False,middle,,0.0
+MATH_Llama-3-8B-Instruct,73,0.0067,0.2477,False,middle,,0.041666666666666664
+MATH_Llama-3-8B-Instruct,74,0.0055,0.0428,False,most contested,,0.0
+MATH_Llama-3-8B-Instruct,75,0.0548,0.2302,False,middle,,0.16666666666666666
+MATH_Llama-3-8B-Instruct,76,0.2047,0.2405,False,middle,0.0,0.0
+MATH_Llama-3-8B-Instruct,77,0.0077,0.1882,False,most contested,,0.0
+MATH_Llama-3-8B-Instruct,78,0.0152,0.2028,False,middle,,0.041666666666666664
+MATH_Llama-3-8B-Instruct,79,0.4976,0.4976,True,least contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,80,0.2233,0.2233,True,middle,0.0,0.5
+MATH_Llama-3-8B-Instruct,81,0.0791,0.1632,False,most contested,,0.0
+MATH_Llama-3-8B-Instruct,82,0.1851,0.2392,False,middle,0.0,0.0
+MATH_Llama-3-8B-Instruct,83,0.3935,0.3935,True,middle,0.125,0.0
+MATH_Llama-3-8B-Instruct,84,0.3379,0.3379,True,middle,0.0,0.4375
+MATH_Llama-3-8B-Instruct,85,0.215,0.215,True,middle,0.0,0.0
+MATH_Llama-3-8B-Instruct,86,0.3103,0.5027,False,least contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,87,0.122,0.2614,False,middle,0.25,0.0
+MATH_Llama-3-8B-Instruct,88,0.0102,0.6718,False,least contested,,0.08333333333333333
+MATH_Llama-3-8B-Instruct,89,0.0098,0.2272,False,middle,,0.3333333333333333
+MATH_Llama-3-8B-Instruct,90,0.6969,0.6969,True,least contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,91,0.6731,0.6731,True,least contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,92,0.6742,0.6742,True,least contested,1.0,1.0
+MATH_Llama-3-8B-Instruct,93,0.6311,0.6311,True,least contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,94,0.1998,0.1998,True,middle,0.0,0.0
+MATH_Llama-3-8B-Instruct,95,0.1333,0.3952,False,middle,0.875,0.5
+MATH_Llama-3-8B-Instruct,96,0.7576,0.7576,True,least contested,0.125,0.6875
+MATH_Llama-3-8B-Instruct,97,0.1505,0.1505,True,most contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,98,0.5119,0.5119,True,least contested,1.0,0.5625
+MATH_Llama-3-8B-Instruct,99,0.1119,0.1119,True,most contested,1.0,0.0
+MATH_Llama-3-8B-Instruct,100,0.7111,0.7111,True,least contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,101,0.8467,0.8467,True,least contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,102,0.3965,0.3965,True,middle,0.0,0.0
+MATH_Llama-3-8B-Instruct,103,0.7247,0.7247,True,least contested,0.0,0.375
+MATH_Llama-3-8B-Instruct,104,0.9295,0.9295,True,least contested,0.125,0.0
+MATH_Llama-3-8B-Instruct,105,0.1453,0.182,False,most contested,,0.0
+MATH_Llama-3-8B-Instruct,106,0.9501,0.9501,True,least contested,1.0,0.5
+MATH_Llama-3-8B-Instruct,107,0.3455,0.3455,True,middle,0.0,0.0
+MATH_Llama-3-8B-Instruct,108,0.4019,0.5182,False,least contested,1.0,0.0
+MATH_Llama-3-8B-Instruct,109,0.9834,0.9834,True,least contested,1.0,0.25
+MATH_Llama-3-8B-Instruct,110,0.1562,0.2459,False,middle,0.0,0.0
+MATH_Llama-3-8B-Instruct,111,0.4308,0.4308,True,least contested,0.125,0.0
+MATH_Llama-3-8B-Instruct,112,0.1236,0.1838,False,most contested,,0.0
+MATH_Llama-3-8B-Instruct,113,0.0908,0.0908,True,most contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,114,0.0483,0.6376,False,least contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,115,0.014,0.0841,False,most contested,,0.041666666666666664
+MATH_Llama-3-8B-Instruct,116,0.0023,0.037,False,most contested,,0.125
+MATH_Llama-3-8B-Instruct,117,0.0578,0.5338,False,least contested,0.0,0.0
+MATH_Llama-3-8B-Instruct,118,0.3996,0.5547,False,least contested,1.0,0.5
+MATH_Llama-3-8B-Instruct,119,0.0003,0.6978,False,least contested,,0.2916666666666667
+MATH_Llama-3-8B-Instruct,120,0.0005,0.1241,False,most contested,,0.20833333333333334
+MATH_Llama-3-8B-Instruct,121,0.0393,0.0778,False,most contested,,0.0
+MATH_Llama-3-8B-Instruct,122,0.0022,0.1354,False,most contested,,0.0
+MATH_Llama-3-8B-Instruct,123,0.0257,0.0746,False,most contested,,0.875
+MATH_Llama-3-8B-Instruct,124,0.0004,0.0983,False,most contested,,0.3333333333333333
+MATH_Llama-3-8B-Instruct,125,0.0,0.0522,False,most contested,,0.0
+MATH_Llama-3-8B-Instruct,126,0.0002,0.0791,False,most contested,,0.6666666666666666
+MATH_Llama-3-8B-Instruct,127,0.1933,0.4224,False,least contested,0.0,0.0

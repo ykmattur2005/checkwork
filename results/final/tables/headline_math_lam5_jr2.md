@@ -1,0 +1,17 @@
+MATH, λ=5, c_j/c_s=2, c_s=0.01: test-set means over questions ± standard error (n=128 questions, 100 episodes each). param = chosen parameter per fold (tuned) or c_s (DP); fixed-k param is k, margin params are m or (m, k_max). Compute in resample-equivalents.
+
+Source: `results/final/MATH_Llama-3-8B-Instruct/lam5_jr2/headline.csv`
+
+| policy | param | accuracy | wrong | abstain | compute | reward |
+|---|---|---|---|---|---|---|
+| first answer | 1 | 0.264 ± 0.027 | 0.736 ± 0.027 | 0.000 ± 0.000 | 0.00 ± 0.00 | -3.417 ± 0.164 |
+| fixed-k (tuned) | 17/21 | 0.393 ± 0.037 | 0.607 ± 0.037 | 0.000 ± 0.000 | 18.41 ± 0.17 | -2.825 ± 0.225 |
+| margin stop (tuned) | 2/3 | 0.394 ± 0.037 | 0.606 ± 0.037 | 0.000 ± 0.000 | 12.30 ± 0.55 | -2.762 ± 0.227 |
+| margin stop+abstain (tuned) | (5, 5) | 0.089 ± 0.019 | 0.007 ± 0.002 | 0.904 ± 0.019 | 4.00 ± 0.00 | 0.015 ± 0.023 |
+| fixed-k (oracle-tuned on test) | 21 | 0.398 ± 0.038 | 0.603 ± 0.038 | 0.000 ± 0.000 | 20.00 ± 0.00 | -2.815 ± 0.226 |
+| margin stop (oracle-tuned on test) | 3 | 0.395 ± 0.037 | 0.605 ± 0.037 | 0.000 ± 0.000 | 13.02 ± 0.53 | -2.757 ± 0.229 |
+| margin stop+abstain (oracle-tuned on test) | (5, 5) | 0.089 ± 0.019 | 0.007 ± 0.002 | 0.904 ± 0.019 | 4.00 ± 0.00 | 0.015 ± 0.023 |
+| DP (resample) | 0.01 | 0.394 ± 0.037 | 0.606 ± 0.037 | 0.000 ± 0.000 | 14.29 ± 0.31 | -2.781 ± 0.227 |
+| DP (+judge) | 0.01 | 0.394 ± 0.037 | 0.606 ± 0.037 | 0.000 ± 0.000 | 14.31 ± 0.32 | -2.780 ± 0.226 |
+| DP (resample, abstain) | 0.01 | 0.107 ± 0.023 | 0.006 ± 0.004 | 0.887 ± 0.023 | 2.85 ± 0.20 | 0.046 ± 0.029 |
+| DP (+judge, abstain) | 0.01 | 0.106 ± 0.023 | 0.006 ± 0.003 | 0.888 ± 0.023 | 2.91 ± 0.21 | 0.046 ± 0.028 |

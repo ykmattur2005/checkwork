@@ -1,0 +1,16 @@
+{
+  "config": "MATH_Llama-3-8B-Instruct",
+  "lam": 2.0,
+  "judge_ratio": 1.0,
+  "c_s": 0.01,
+  "H": 20,
+  "folds": 5,
+  "episodes": 100,
+  "tune_episodes": 100,
+  "seed": 0,
+  "judge_file": "MATH_Llama-3-8B-Instruct_judge.csv",
+  "judge_false_pass": 0.13929738562091504,
+  "judge_false_fail": 0.7355769230769231,
+  "n_questions": 128,
+  "runtime_s": 13.5
+}

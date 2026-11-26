@@ -1,0 +1,16 @@
+fold,policy,param,tune_reward,n_train
+0,fixed-k (tuned),17,-2.731764705882354,102
+0,margin stop (tuned),3,-2.6700656862745102,102
+0,margin stop+abstain (tuned),"(5, 5)",0.03352941176470587,102
+1,fixed-k (tuned),21,-3.080588235294118,102
+1,margin stop (tuned),2,-2.99650294117647,102
+1,margin stop+abstain (tuned),"(5, 5)",0.008627450980392134,102
+2,fixed-k (tuned),21,-2.811764705882353,102
+2,margin stop (tuned),3,-2.7494039215686277,102
+2,margin stop+abstain (tuned),"(5, 5)",0.018529411764705874,102
+3,fixed-k (tuned),21,-2.6165048543689315,103
+3,margin stop (tuned),3,-2.555466019417476,103
+3,margin stop+abstain (tuned),"(5, 5)",0.02766990291262134,103
+4,fixed-k (tuned),17,-2.772233009708739,103
+4,margin stop (tuned),3,-2.719898058252427,103
+4,margin stop+abstain (tuned),"(5, 5)",0.023980582524271835,103

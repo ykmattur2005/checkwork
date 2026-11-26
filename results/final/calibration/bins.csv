@@ -1,0 +1,181 @@
+config,belief,bin,lo,hi,count,mean_pred,frac_correct
+gsm8k,"vote-only pc[n,a,b], all trajectory states n=1..21",0,0.0,0.1,623,0.08257513029880546,0.07062600321027288
+gsm8k,"vote-only pc[n,a,b], all trajectory states n=1..21",1,0.1,0.2,1463,0.14114122042815652,0.1394395078605605
+gsm8k,"vote-only pc[n,a,b], all trajectory states n=1..21",2,0.2,0.3,2594,0.2327132782882328,0.302621434078643
+gsm8k,"vote-only pc[n,a,b], all trajectory states n=1..21",3,0.3,0.4,8567,0.35359314930429253,0.4182327535893545
+gsm8k,"vote-only pc[n,a,b], all trajectory states n=1..21",4,0.4,0.5,10935,0.4572910787283039,0.5114769090077732
+gsm8k,"vote-only pc[n,a,b], all trajectory states n=1..21",5,0.5,0.6,16402,0.5497148898865679,0.5793195951713206
+gsm8k,"vote-only pc[n,a,b], all trajectory states n=1..21",6,0.6,0.7,16636,0.6480431610229755,0.6273142582351526
+gsm8k,"vote-only pc[n,a,b], all trajectory states n=1..21",7,0.7,0.8,25656,0.7593118580755766,0.7538197692547552
+gsm8k,"vote-only pc[n,a,b], all trajectory states n=1..21",8,0.8,0.9,17280,0.8512813136740415,0.8115740740740741
+gsm8k,"vote-only pc[n,a,b], all trajectory states n=1..21",9,0.9,1.0,166544,0.9784686164346206,0.9733223652608319
+gsm8k,"vote-only pc[n,a,b], trajectory states n<=10",0,0.0,0.1,546,0.08747563043766188,0.07692307692307693
+gsm8k,"vote-only pc[n,a,b], trajectory states n<=10",1,0.1,0.2,1285,0.13862845440203114,0.11517509727626458
+gsm8k,"vote-only pc[n,a,b], trajectory states n<=10",2,0.2,0.3,1759,0.22271262986914822,0.22001137009664581
+gsm8k,"vote-only pc[n,a,b], trajectory states n<=10",3,0.3,0.4,5287,0.34924213746916666,0.37072063552108947
+gsm8k,"vote-only pc[n,a,b], trajectory states n<=10",4,0.4,0.5,4350,0.456592722007598,0.4804597701149425
+gsm8k,"vote-only pc[n,a,b], trajectory states n<=10",5,0.5,0.6,5498,0.5502859583417907,0.5871225900327391
+gsm8k,"vote-only pc[n,a,b], trajectory states n<=10",6,0.6,0.7,7260,0.6532272925718429,0.6738292011019283
+gsm8k,"vote-only pc[n,a,b], trajectory states n<=10",7,0.7,0.8,19070,0.7624142294506409,0.7590980597797587
+gsm8k,"vote-only pc[n,a,b], trajectory states n<=10",8,0.8,0.9,8589,0.8499520555449137,0.8312958435207825
+gsm8k,"vote-only pc[n,a,b], trajectory states n<=10",9,0.9,1.0,73356,0.9696231876430936,0.9654424995910355
+gsm8k,"vote-only pc[n,a,b], DP-visited states",0,0.0,0.1,42,0.0942693254923624,0.11904761904761904
+gsm8k,"vote-only pc[n,a,b], DP-visited states",1,0.1,0.2,1047,0.14350354250399444,0.11938872970391595
+gsm8k,"vote-only pc[n,a,b], DP-visited states",2,0.2,0.3,1432,0.21148980068799583,0.19902234636871508
+gsm8k,"vote-only pc[n,a,b], DP-visited states",3,0.3,0.4,4373,0.3487930495352668,0.3578778870340727
+gsm8k,"vote-only pc[n,a,b], DP-visited states",4,0.4,0.5,3113,0.4589644260106036,0.47381946675232894
+gsm8k,"vote-only pc[n,a,b], DP-visited states",5,0.5,0.6,5388,0.552053601310886,0.5690423162583519
+gsm8k,"vote-only pc[n,a,b], DP-visited states",6,0.6,0.7,8348,0.6537363399386762,0.6524916147580259
+gsm8k,"vote-only pc[n,a,b], DP-visited states",7,0.7,0.8,19436,0.7613581107695245,0.7520065857172258
+gsm8k,"vote-only pc[n,a,b], DP-visited states",8,0.8,0.9,6366,0.8444833948972686,0.8268928683631794
+gsm8k,"vote-only pc[n,a,b], DP-visited states",9,0.9,1.0,18934,0.9424197422976112,0.9395795922678779
+gsm8k,"posterior (votes+judge), DP-visited states",0,0.0,0.1,42,0.0942693254923624,0.11904761904761904
+gsm8k,"posterior (votes+judge), DP-visited states",1,0.1,0.2,1047,0.14350354250399444,0.11938872970391595
+gsm8k,"posterior (votes+judge), DP-visited states",2,0.2,0.3,1432,0.21148980068799583,0.19902234636871508
+gsm8k,"posterior (votes+judge), DP-visited states",3,0.3,0.4,4382,0.34891076915172897,0.357371063441351
+gsm8k,"posterior (votes+judge), DP-visited states",4,0.4,0.5,3492,0.4596132378239022,0.4756586483390607
+gsm8k,"posterior (votes+judge), DP-visited states",5,0.5,0.6,5055,0.5519064450649156,0.5665677546983185
+gsm8k,"posterior (votes+judge), DP-visited states",6,0.6,0.7,8415,0.6541585580197624,0.663220439691028
+gsm8k,"posterior (votes+judge), DP-visited states",7,0.7,0.8,19539,0.7612790513659121,0.7508060801473975
+gsm8k,"posterior (votes+judge), DP-visited states",8,0.8,0.9,6195,0.8439062679174149,0.8295399515738499
+gsm8k,"posterior (votes+judge), DP-visited states",9,0.9,1.0,18880,0.9424651177167334,0.9397245762711864
+gsm8k,"vote-only pc[n,a,b], DP-visited states with >=1 verdict",0,0.0,0.1,0,,
+gsm8k,"vote-only pc[n,a,b], DP-visited states with >=1 verdict",1,0.1,0.2,0,,
+gsm8k,"vote-only pc[n,a,b], DP-visited states with >=1 verdict",2,0.2,0.3,0,,
+gsm8k,"vote-only pc[n,a,b], DP-visited states with >=1 verdict",3,0.3,0.4,4,0.3682200932663291,1.0
+gsm8k,"vote-only pc[n,a,b], DP-visited states with >=1 verdict",4,0.4,0.5,163,0.46865143484183797,0.48466257668711654
+gsm8k,"vote-only pc[n,a,b], DP-visited states with >=1 verdict",5,0.5,0.6,1347,0.5520716427770869,0.5723830734966593
+gsm8k,"vote-only pc[n,a,b], DP-visited states with >=1 verdict",6,0.6,0.7,1585,0.6504825731763356,0.591167192429022
+gsm8k,"vote-only pc[n,a,b], DP-visited states with >=1 verdict",7,0.7,0.8,1357,0.7434423783658973,0.683861459100958
+gsm8k,"vote-only pc[n,a,b], DP-visited states with >=1 verdict",8,0.8,0.9,675,0.8433209935618922,0.7614814814814815
+gsm8k,"vote-only pc[n,a,b], DP-visited states with >=1 verdict",9,0.9,1.0,101,0.9213558866396603,0.8217821782178217
+gsm8k,"posterior (votes+judge), DP-visited states with >=1 verdict",0,0.0,0.1,0,,
+gsm8k,"posterior (votes+judge), DP-visited states with >=1 verdict",1,0.1,0.2,0,,
+gsm8k,"posterior (votes+judge), DP-visited states with >=1 verdict",2,0.2,0.3,0,,
+gsm8k,"posterior (votes+judge), DP-visited states with >=1 verdict",3,0.3,0.4,13,0.39445116755537213,0.38461538461538464
+gsm8k,"posterior (votes+judge), DP-visited states with >=1 verdict",4,0.4,0.5,542,0.4660578453676696,0.488929889298893
+gsm8k,"posterior (votes+judge), DP-visited states with >=1 verdict",5,0.5,0.6,1014,0.5513439632749813,0.5611439842209073
+gsm8k,"posterior (votes+judge), DP-visited states with >=1 verdict",6,0.6,0.7,1652,0.6527652411699294,0.6483050847457628
+gsm8k,"posterior (votes+judge), DP-visited states with >=1 verdict",7,0.7,0.8,1460,0.7436482542223296,0.6726027397260274
+gsm8k,"posterior (votes+judge), DP-visited states with >=1 verdict",8,0.8,0.9,504,0.8358327549338276,0.7718253968253969
+gsm8k,"posterior (votes+judge), DP-visited states with >=1 verdict",9,0.9,1.0,47,0.9153822633948591,0.7446808510638298
+gsm8k,"posterior after 1 probe verdict, all trajectory states",0,0.0,0.1,816,0.07250360272569108,0.08333333333333333
+gsm8k,"posterior after 1 probe verdict, all trajectory states",1,0.1,0.2,2494,0.15217492068910848,0.21251002405773858
+gsm8k,"posterior after 1 probe verdict, all trajectory states",2,0.2,0.3,5470,0.2699479396235354,0.3776965265082267
+gsm8k,"posterior after 1 probe verdict, all trajectory states",3,0.3,0.4,7592,0.35507270514384087,0.45152792413066384
+gsm8k,"posterior after 1 probe verdict, all trajectory states",4,0.4,0.5,12908,0.4558468810869955,0.486210102262163
+gsm8k,"posterior after 1 probe verdict, all trajectory states",5,0.5,0.6,12349,0.5499966548989105,0.5670094744513726
+gsm8k,"posterior after 1 probe verdict, all trajectory states",6,0.6,0.7,16393,0.6546309852712086,0.7049350332458977
+gsm8k,"posterior after 1 probe verdict, all trajectory states",7,0.7,0.8,20349,0.7425478445328954,0.7231313578062805
+gsm8k,"posterior after 1 probe verdict, all trajectory states",8,0.8,0.9,24306,0.8579246632691657,0.8388875174853946
+gsm8k,"posterior after 1 probe verdict, all trajectory states",9,0.9,1.0,164023,0.9803473859354765,0.972918432171098
+gsm8k,"posterior after 2 probe verdicts, all trajectory states",0,0.0,0.1,1053,0.07445737405557182,0.12345679012345678
+gsm8k,"posterior after 2 probe verdicts, all trajectory states",1,0.1,0.2,2553,0.1517196534441538,0.2526439482961222
+gsm8k,"posterior after 2 probe verdicts, all trajectory states",2,0.2,0.3,6728,0.2569491018925425,0.40219976218787157
+gsm8k,"posterior after 2 probe verdicts, all trajectory states",3,0.3,0.4,8851,0.35735415863514003,0.44514744096712233
+gsm8k,"posterior after 2 probe verdicts, all trajectory states",4,0.4,0.5,12465,0.4490703320340655,0.49659045326915363
+gsm8k,"posterior after 2 probe verdicts, all trajectory states",5,0.5,0.6,12781,0.5513837251031952,0.6059776230341913
+gsm8k,"posterior after 2 probe verdicts, all trajectory states",6,0.6,0.7,18472,0.6614846785529809,0.7076115201385881
+gsm8k,"posterior after 2 probe verdicts, all trajectory states",7,0.7,0.8,14473,0.750643913487084,0.749188143439508
+gsm8k,"posterior after 2 probe verdicts, all trajectory states",8,0.8,0.9,27029,0.8594954158596557,0.8324392319360686
+gsm8k,"posterior after 2 probe verdicts, all trajectory states",9,0.9,1.0,162295,0.9808451037562786,0.9725623093749037
+gsm8k,"posterior after 3 probe verdicts, all trajectory states",0,0.0,0.1,1158,0.07327868313961285,0.13126079447322972
+gsm8k,"posterior after 3 probe verdicts, all trajectory states",1,0.1,0.2,2539,0.1484261113488566,0.298148877510831
+gsm8k,"posterior after 3 probe verdicts, all trajectory states",2,0.2,0.3,7430,0.2468560193741787,0.4231493943472409
+gsm8k,"posterior after 3 probe verdicts, all trajectory states",3,0.3,0.4,10580,0.35353262107009475,0.4381852551984877
+gsm8k,"posterior after 3 probe verdicts, all trajectory states",4,0.4,0.5,11931,0.44812932857053495,0.5124465677646467
+gsm8k,"posterior after 3 probe verdicts, all trajectory states",5,0.5,0.6,11644,0.5495906172544839,0.6169701133631055
+gsm8k,"posterior after 3 probe verdicts, all trajectory states",6,0.6,0.7,17971,0.6515182866741583,0.7147626731957042
+gsm8k,"posterior after 3 probe verdicts, all trajectory states",7,0.7,0.8,15173,0.7551293447824864,0.7430962894615435
+gsm8k,"posterior after 3 probe verdicts, all trajectory states",8,0.8,0.9,26831,0.8622314624796862,0.8328426074317021
+gsm8k,"posterior after 3 probe verdicts, all trajectory states",9,0.9,1.0,161443,0.9809045601946137,0.9734643186759414
+math,"vote-only pc[n,a,b], all trajectory states n=1..21",0,0.0,0.1,46947,0.0530856228259126,0.0555307048373698
+math,"vote-only pc[n,a,b], all trajectory states n=1..21",1,0.1,0.2,53339,0.15137718818250248,0.16425129829955568
+math,"vote-only pc[n,a,b], all trajectory states n=1..21",2,0.2,0.3,52477,0.2505861387458369,0.2505478590620653
+math,"vote-only pc[n,a,b], all trajectory states n=1..21",3,0.3,0.4,24235,0.3442313601915581,0.31966164637920363
+math,"vote-only pc[n,a,b], all trajectory states n=1..21",4,0.4,0.5,20336,0.4463822104968863,0.440647128245476
+math,"vote-only pc[n,a,b], all trajectory states n=1..21",5,0.5,0.6,12099,0.5469053807716959,0.5447557649392512
+math,"vote-only pc[n,a,b], all trajectory states n=1..21",6,0.6,0.7,14894,0.6530185821825696,0.6518060964146636
+math,"vote-only pc[n,a,b], all trajectory states n=1..21",7,0.7,0.8,10771,0.744231903191098,0.6918577662241203
+math,"vote-only pc[n,a,b], all trajectory states n=1..21",8,0.8,0.9,10785,0.8476878496082945,0.8138154844691702
+math,"vote-only pc[n,a,b], all trajectory states n=1..21",9,0.9,1.0,22917,0.9695319513087134,0.9596805864641968
+math,"vote-only pc[n,a,b], trajectory states n<=10",0,0.0,0.1,29983,0.05440856951721848,0.051962778908047895
+math,"vote-only pc[n,a,b], trajectory states n<=10",1,0.1,0.2,22326,0.1509880296739799,0.16035116008241512
+math,"vote-only pc[n,a,b], trajectory states n<=10",2,0.2,0.3,27610,0.2557669334208046,0.2505613908004346
+math,"vote-only pc[n,a,b], trajectory states n<=10",3,0.3,0.4,9167,0.3399088448652124,0.32366095778335335
+math,"vote-only pc[n,a,b], trajectory states n<=10",4,0.4,0.5,9888,0.44529774764546687,0.45287216828478966
+math,"vote-only pc[n,a,b], trajectory states n<=10",5,0.5,0.6,4451,0.5449610118034636,0.5445967198382387
+math,"vote-only pc[n,a,b], trajectory states n<=10",6,0.6,0.7,7104,0.6574505425502991,0.6599099099099099
+math,"vote-only pc[n,a,b], trajectory states n<=10",7,0.7,0.8,4208,0.7387777061091856,0.6865494296577946
+math,"vote-only pc[n,a,b], trajectory states n<=10",8,0.8,0.9,5639,0.8474842587416213,0.8290477034935272
+math,"vote-only pc[n,a,b], trajectory states n<=10",9,0.9,1.0,7624,0.9537948396170252,0.9467471143756558
+math,"vote-only pc[n,a,b], DP-visited states",0,0.0,0.1,6156,0.08969923746800597,0.07504873294346978
+math,"vote-only pc[n,a,b], DP-visited states",1,0.1,0.2,9796,0.13430274407982692,0.13495304205798286
+math,"vote-only pc[n,a,b], DP-visited states",2,0.2,0.3,13806,0.26767193459361993,0.2619151093727365
+math,"vote-only pc[n,a,b], DP-visited states",3,0.3,0.4,2242,0.3316993934189904,0.3086529884032114
+math,"vote-only pc[n,a,b], DP-visited states",4,0.4,0.5,5235,0.45073708389992945,0.43514804202483287
+math,"vote-only pc[n,a,b], DP-visited states",5,0.5,0.6,2693,0.5484323223969708,0.5573709617526922
+math,"vote-only pc[n,a,b], DP-visited states",6,0.6,0.7,7536,0.657848597986712,0.6476910828025477
+math,"vote-only pc[n,a,b], DP-visited states",7,0.7,0.8,5089,0.7402058509374232,0.6677146787188053
+math,"vote-only pc[n,a,b], DP-visited states",8,0.8,0.9,5513,0.8457167831125509,0.8109922002539453
+math,"vote-only pc[n,a,b], DP-visited states",9,0.9,1.0,3805,0.9359636508095972,0.9109067017082786
+math,"posterior (votes+judge), DP-visited states",0,0.0,0.1,6156,0.08969923746800597,0.07504873294346978
+math,"posterior (votes+judge), DP-visited states",1,0.1,0.2,9796,0.13430274407982692,0.13495304205798286
+math,"posterior (votes+judge), DP-visited states",2,0.2,0.3,13804,0.26767234977446086,0.2619530570849029
+math,"posterior (votes+judge), DP-visited states",3,0.3,0.4,2242,0.3317579497801127,0.3086529884032114
+math,"posterior (votes+judge), DP-visited states",4,0.4,0.5,5288,0.4506046440805849,0.43664901664145234
+math,"posterior (votes+judge), DP-visited states",5,0.5,0.6,2819,0.5503458425500145,0.5572898190847818
+math,"posterior (votes+judge), DP-visited states",6,0.6,0.7,7340,0.6580991331433347,0.6485013623978202
+math,"posterior (votes+judge), DP-visited states",7,0.7,0.8,5104,0.7404376311853327,0.6690830721003135
+math,"posterior (votes+judge), DP-visited states",8,0.8,0.9,5517,0.8456865113140272,0.8109479789740801
+math,"posterior (votes+judge), DP-visited states",9,0.9,1.0,3805,0.9359636508095972,0.9109067017082786
+math,"vote-only pc[n,a,b], DP-visited states with >=1 verdict",0,0.0,0.1,0,,
+math,"vote-only pc[n,a,b], DP-visited states with >=1 verdict",1,0.1,0.2,0,,
+math,"vote-only pc[n,a,b], DP-visited states with >=1 verdict",2,0.2,0.3,2,0.26480635642945277,0.0
+math,"vote-only pc[n,a,b], DP-visited states with >=1 verdict",3,0.3,0.4,4,0.35586521240422186,0.0
+math,"vote-only pc[n,a,b], DP-visited states with >=1 verdict",4,0.4,0.5,68,0.4676387367281041,0.47058823529411764
+math,"vote-only pc[n,a,b], DP-visited states with >=1 verdict",5,0.5,0.6,140,0.5383398593621093,0.5357142857142857
+math,"vote-only pc[n,a,b], DP-visited states with >=1 verdict",6,0.6,0.7,356,0.6444276845818828,0.601123595505618
+math,"vote-only pc[n,a,b], DP-visited states with >=1 verdict",7,0.7,0.8,48,0.7361825994775449,0.5625
+math,"vote-only pc[n,a,b], DP-visited states with >=1 verdict",8,0.8,0.9,3,0.8455689496450128,1.0
+math,"vote-only pc[n,a,b], DP-visited states with >=1 verdict",9,0.9,1.0,0,,
+math,"posterior (votes+judge), DP-visited states with >=1 verdict",0,0.0,0.1,0,,
+math,"posterior (votes+judge), DP-visited states with >=1 verdict",1,0.1,0.2,0,,
+math,"posterior (votes+judge), DP-visited states with >=1 verdict",2,0.2,0.3,0,,
+math,"posterior (votes+judge), DP-visited states with >=1 verdict",3,0.3,0.4,4,0.38868605281326074,0.0
+math,"posterior (votes+judge), DP-visited states with >=1 verdict",4,0.4,0.5,121,0.4544475849546596,0.5206611570247934
+math,"posterior (votes+judge), DP-visited states with >=1 verdict",5,0.5,0.6,266,0.5633994971584343,0.5451127819548872
+math,"posterior (votes+judge), DP-visited states with >=1 verdict",6,0.6,0.7,160,0.6394803659710318,0.58125
+math,"posterior (votes+judge), DP-visited states with >=1 verdict",7,0.7,0.8,63,0.7559183956240288,0.6984126984126984
+math,"posterior (votes+judge), DP-visited states with >=1 verdict",8,0.8,0.9,7,0.8217949241327733,0.8571428571428571
+math,"posterior (votes+judge), DP-visited states with >=1 verdict",9,0.9,1.0,0,,
+math,"posterior after 1 probe verdict, all trajectory states",0,0.0,0.1,48175,0.05040251634019409,0.055049299429164505
+math,"posterior after 1 probe verdict, all trajectory states",1,0.1,0.2,57500,0.14774117303970066,0.17361739130434783
+math,"posterior after 1 probe verdict, all trajectory states",2,0.2,0.3,48759,0.24504374765805076,0.24930782009475175
+math,"posterior after 1 probe verdict, all trajectory states",3,0.3,0.4,22675,0.3494222576247555,0.3375082690187431
+math,"posterior after 1 probe verdict, all trajectory states",4,0.4,0.5,18759,0.44218109739926764,0.4202782664321126
+math,"posterior after 1 probe verdict, all trajectory states",5,0.5,0.6,14096,0.5532797429621829,0.550794551645857
+math,"posterior after 1 probe verdict, all trajectory states",6,0.6,0.7,13829,0.6471530668940149,0.6124087063417456
+math,"posterior after 1 probe verdict, all trajectory states",7,0.7,0.8,11298,0.7495689847908689,0.733492653567003
+math,"posterior after 1 probe verdict, all trajectory states",8,0.8,0.9,10401,0.8486428496505467,0.8069416402269013
+math,"posterior after 1 probe verdict, all trajectory states",9,0.9,1.0,23308,0.9721321207040453,0.9655054058692294
+math,"posterior after 2 probe verdicts, all trajectory states",0,0.0,0.1,50697,0.05085349160874799,0.06404718227903032
+math,"posterior after 2 probe verdicts, all trajectory states",1,0.1,0.2,61393,0.14853499491748479,0.18533057514700374
+math,"posterior after 2 probe verdicts, all trajectory states",2,0.2,0.3,43400,0.24265417320731048,0.24873271889400922
+math,"posterior after 2 probe verdicts, all trajectory states",3,0.3,0.4,24672,0.3515514303735625,0.33608949416342415
+math,"posterior after 2 probe verdicts, all trajectory states",4,0.4,0.5,16651,0.4456150746636903,0.43919284127079455
+math,"posterior after 2 probe verdicts, all trajectory states",5,0.5,0.6,13951,0.5528233711731988,0.550354813275034
+math,"posterior after 2 probe verdicts, all trajectory states",6,0.6,0.7,14038,0.6476345273364489,0.6084912380681009
+math,"posterior after 2 probe verdicts, all trajectory states",7,0.7,0.8,10225,0.7506445049948097,0.7220537897310514
+math,"posterior after 2 probe verdicts, all trajectory states",8,0.8,0.9,10133,0.8459398925075006,0.810618770354288
+math,"posterior after 2 probe verdicts, all trajectory states",9,0.9,1.0,23640,0.9716759970219405,0.968824027072758
+math,"posterior after 3 probe verdicts, all trajectory states",0,0.0,0.1,54548,0.05307865339690674,0.07233995746865146
+math,"posterior after 3 probe verdicts, all trajectory states",1,0.1,0.2,60588,0.14934649683349166,0.1917046279791378
+math,"posterior after 3 probe verdicts, all trajectory states",2,0.2,0.3,40768,0.24013652086800352,0.2541699372056515
+math,"posterior after 3 probe verdicts, all trajectory states",3,0.3,0.4,25590,0.3478600581929571,0.32325127002735443
+math,"posterior after 3 probe verdicts, all trajectory states",4,0.4,0.5,15725,0.4466182272688194,0.4555802861685215
+math,"posterior after 3 probe verdicts, all trajectory states",5,0.5,0.6,14214,0.5502400888418101,0.5583227803573941
+math,"posterior after 3 probe verdicts, all trajectory states",6,0.6,0.7,13798,0.6475887979600962,0.6041455283374402
+math,"posterior after 3 probe verdicts, all trajectory states",7,0.7,0.8,9798,0.7498206776376889,0.713002653602776
+math,"posterior after 3 probe verdicts, all trajectory states",8,0.8,0.9,10304,0.8463310685344272,0.8077445652173914
+math,"posterior after 3 probe verdicts, all trajectory states",9,0.9,1.0,23467,0.9724695819936096,0.9717901734350365
